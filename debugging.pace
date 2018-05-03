@@ -2,7 +2,7 @@
 
 package: debugging
 author: Samuel Kriikkula
-purpose: platform-specific logging for debugging
+purpose: platform-specific debugging functionality
 
 -->
 
@@ -10,5 +10,8 @@ element Debug {
 
     //the debug logging function, highly platform specific
     public get func(object) Log;
+
+    //pauses the application
+    public get func() Pause;
 
 }

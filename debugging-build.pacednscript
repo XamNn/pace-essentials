@@ -5,9 +5,10 @@
 compile debugging.pace
 
 attribute Debug         document "Provides functions for debugging your application."
-attribute Debug.Enabled document "This value indicates if debugging is enabled."
 attribute Debug.Log     document "This function platform-specifically logs the specified object (ex. print to the console)."
+attribute Debug.Pause   document "This function pauses the program"
 
 attribute Debug.Log    javascriptvalue "(x)=>{console.log(\"[Debug.Log] \"+x);}"
+attribute Debug.Pause  javascriptvalue "()=>{Alert(\"[Debug.Pause] Program is paused\");}"
 
 export debugging
