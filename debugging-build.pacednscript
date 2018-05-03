@@ -1,0 +1,13 @@
+# script to build debugging
+# run the command on the next line in this directory to build
+# pacedn "run debugging-build.pacednscript"
+
+compile debugging.pace
+
+attribute Debug         document "Provides functions for debugging your application."
+attribute Debug.Enabled document "This value indicates if debugging is enabled."
+attribute Debug.Log     document "This function platform-specifically logs the specified object (ex. print to the console)."
+
+attribute Debug.Log    javascriptvalue "(x)=>{console.log(\"[Debug.Log] \"+x);}"
+
+export debugging

@@ -1,0 +1,14 @@
+<!--
+
+package: debugging
+author: Samuel Kriikkula
+purpose: platform-specific logging for debugging
+
+-->
+
+element Debug {
+
+    //the debug logging function, highly platform specific
+    public get func(object) Log;
+
+}
