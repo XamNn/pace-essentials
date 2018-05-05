@@ -15,136 +15,136 @@ Precision: fixed, 8 significant bits
 <document>Provides a type and functions for 8-bit signed integers.</document>
 </attributes>
 element Int8 {
-    struct { }
-    public get Int8 MaxValue = FromInteger(0x7F);
-    public get Int8 MinValue = FromInteger(0x80);
+	struct { }
+	public get Int8 MaxValue = FromInteger(0x7F);
+	public get Int8 MinValue = FromInteger(0x80);
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => bool Equals;
+	public get func (Int8, Int8) => bool Equals;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => bool LessThan;
+	public get func (Int8, Int8) => bool LessThan;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => bool MoreThan;
+	public get func (Int8, Int8) => bool MoreThan;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => bool LessThanOrEquals;
+	public get func (Int8, Int8) => bool LessThanOrEquals;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => bool MoreThanOrEquals;
+	public get func (Int8, Int8) => bool MoreThanOrEquals;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 Add;
+	public get func (Int8, Int8) => Int8 Add;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 Sub;
+	public get func (Int8, Int8) => Int8 Sub;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 Mul;
+	public get func (Int8, Int8) => Int8 Mul;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 Div;
+	public get func (Int8, Int8) => Int8 Div;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 Mod;
+	public get func (Int8, Int8) => Int8 Mod;
 
-    public get func (Int8, Int8) => Int8 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):Int8;
+	public get func (Int8, Int8) => Int8 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):Int8;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 BitAnd;
+	public get func (Int8, Int8) => Int8 BitAnd;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 BitOr;
+	public get func (Int8, Int8) => Int8 BitOr;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
 	</attributes>
-    public get func (Int8, Int8) => Int8 BitXor;
+	public get func (Int8, Int8) => Int8 BitXor;
 
 	<attributes>
 	<javascriptvalue>(x)=>-x</javascriptvalue>
 	</attributes>
-    public get func (Int8) => Int8 Negate;
+	public get func (Int8) => Int8 Negate;
 
 	<attributes>
 	<javascriptvalue>(x)=>~x</javascriptvalue>
 	</attributes>
-    public get func (Int8) => Int8 BitNot;
+	public get func (Int8) => Int8 BitNot;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => UInt8   ToUInt8;
+	public get func (Int8) => UInt8   ToUInt8;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => Int16   ToInt16;
+	public get func (Int8) => Int16   ToInt16;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => UInt16  ToUInt16;
+	public get func (Int8) => UInt16  ToUInt16;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => Int32   ToInt32;
+	public get func (Int8) => Int32   ToInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => UInt32  ToUInt32;
+	public get func (Int8) => UInt32  ToUInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => Int64   ToInt64;
+	public get func (Int8) => Int64   ToInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => UInt64  ToUInt64;
+	public get func (Int8) => UInt64  ToUInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => Float32 ToFloat32;
+	public get func (Int8) => Float32 ToFloat32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x<javascriptvalue>
 	</attributes>
-    public get func (Int8) => Float64 ToFloat64;
+	public get func (Int8) => Float64 ToFloat64;
 
 	<attributes>
 	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
 	</attributes>
-    public get func ([object Integer]) => Int8 FromInteger;
+	public get func ([object Integer]) => Int8 FromInteger;
 }
 
 <!--
@@ -1169,209 +1169,209 @@ Precision: floating, 23 significant bits
 <document>Provides a type and functions for 32-bit floating point numbers.</document>
 </attributes>
 element Float32 {
-    struct { }
-    public get Float32 MaxValue = FromBits(0x7F7FFFFF);
-    public get Float32 MinValue = FromBits(0xFF7FFFFF);
-    public get Float32 Epsilon  = FromBits(0x00000001);
-    public get Float32 Infinity = FromBits(0x7F800000);
-    public get Float32 MinNaN   = FromBits(0x7F800001);
-    public get Float32 MaxNaN   = FromBits(0x7FFFFFFF);
+	struct { }
+	public get Float32 MaxValue = FromBits(0x7F7FFFFF);
+	public get Float32 MinValue = FromBits(0xFF7FFFFF);
+	public get Float32 Epsilon  = FromBits(0x00000001);
+	public get Float32 Infinity = FromBits(0x7F800000);
+	public get Float32 MinNaN   = FromBits(0x7F800001);
+	public get Float32 MaxNaN   = FromBits(0x7FFFFFFF);
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => bool Equals;
+	public get func (Float32, Float32) => bool Equals;
 
 	<attributes>
 	<javascriptvalue>x<y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => bool LessThan;
+	public get func (Float32, Float32) => bool LessThan;
 
 	<attributes>
 	<javascriptvalue>x>y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => bool MoreThan;
+	public get func (Float32, Float32) => bool MoreThan;
 
 	<attributes>
 	<javascriptvalue>x<=y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => bool LessThanOrEquals;
+	public get func (Float32, Float32) => bool LessThanOrEquals;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => bool MoreThanOrEquals;
+	public get func (Float32, Float32) => bool MoreThanOrEquals;
 
 	<attributes>
 	<javascriptvalue>(x)=>isNaN(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => bool IsNaN = func (x) = not Equals(x,x);
+	public get func (Float32) => bool IsNaN = func (x) = not Equals(x,x);
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Add;
+	public get func (Float32, Float32) => Float32 Add;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Sub;
+	public get func (Float32, Float32) => Float32 Sub;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Mul;
+	public get func (Float32, Float32) => Float32 Mul;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x/</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Div;
+	public get func (Float32, Float32) => Float32 Div;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Mod;
+	public get func (Float32, Float32) => Float32 Mod;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>Math.pow(x,y)</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Pow;
+	public get func (Float32, Float32) => Float32 Pow;
 
 	<attributes>
 	<javascriptvalue>(x)=>-x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Negate;
+	public get func (Float32) => Float32 Negate;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.exp(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Exp;
+	public get func (Float32) => Float32 Exp;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.log(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Log;
+	public get func (Float32) => Float32 Log;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.sin(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Sin;
+	public get func (Float32) => Float32 Sin;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.cos(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Cos;
+	public get func (Float32) => Float32 Cos;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.tan(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Tan;
+	public get func (Float32) => Float32 Tan;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.asin(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Asin;
+	public get func (Float32) => Float32 Asin;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.acos(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Acos;
+	public get func (Float32) => Float32 Acos;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.atan(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Atan;
+	public get func (Float32) => Float32 Atan;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>Math.atan2(x,y)</javascriptvalue>
 	</attributes>
-    public get func (Float32, Float32) => Float32 Atan2;
+	public get func (Float32, Float32) => Float32 Atan2;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.sinh(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Sinh;
+	public get func (Float32) => Float32 Sinh;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.cosh(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Cosh;
+	public get func (Float32) => Float32 Cosh;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.tanh(x)</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float32 Tanh;
+	public get func (Float32) => Float32 Tanh;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Int8    ToInt8;
+	public get func (Float32) => Int8    ToInt8;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => UInt8   ToUInt8;
+	public get func (Float32) => UInt8   ToUInt8;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Int16   ToInt16;
+	public get func (Float32) => Int16   ToInt16;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => UInt16  ToUInt16;
+	public get func (Float32) => UInt16  ToUInt16;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Int32   ToInt32;
+	public get func (Float32) => Int32   ToInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => UInt32  ToUInt32;
+	public get func (Float32) => UInt32  ToUInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Int64   ToInt64;
+	public get func (Float32) => Int64   ToInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => UInt64  ToUInt64;
+	public get func (Float32) => UInt64  ToUInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Float64 ToFloat64;
+	public get func (Float32) => Float64 ToFloat64;
 
 	<attributes>
 	<javascriptvalue>(x)=>(Float32Array.of(x))[0]</javascriptvalue>
 	</attributes>
-    public get func (Float32) => Int32   BitsToInt32;
+	public get func (Float32) => Int32   BitsToInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>(Float32Array.of(x))[0]</javascriptvalue>
 	</attributes>
-    public get func (Float32) => UInt32  BitsToUInt32;
+	public get func (Float32) => UInt32  BitsToUInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>parseInt(x,16)</javascriptvalue>
 	</attributes>
-    public get func ([object Integer])                       => Float32 FromInteger;
+	public get func ([object Integer])                       => Float32 FromInteger;
 
 	<attributes>
 	<javascriptvalue>(x)=>parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
 	</attributes>
-    public get func ([object Numerator, object Denominator]) => Float32 FromFractional;
+	public get func ([object Numerator, object Denominator]) => Float32 FromFractional;
 
 	<attributes>
 	<javascriptrequire_i64/>
 	<javascriptvalue>(x)=>(new Float32Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
 	</attributes>
-    public get func ([object Integer])                       => Float32 FromBits;
+	public get func ([object Integer])                       => Float32 FromBits;
 }
 
 <!--
@@ -1383,211 +1383,211 @@ Precision: floating, 52 significant bits
 <document>Provides a type and functions for 64-bit floating point numbers.</document>
 </attributes>
 element Float64 {
-    struct { }
-    public get Float64 MaxValue = FromBits(0x7FEFFFFFFFFFFFFF);
-    public get Float64 MinValue = FromBits(0xFFEFFFFFFFFFFFFF);
-    public get Float64 Epsilon  = FromBits(0x0000000000000001);
-    public get Float64 Infinity = FromBits(0x7FF0000000000000);
-    public get Float64 MinNaN   = FromBits(0x7FF0000000000001);
-    public get Float64 MaxNaN   = FromBits(0x7FFFFFFFFFFFFFFF);
+	struct { }
+	public get Float64 MaxValue = FromBits(0x7FEFFFFFFFFFFFFF);
+	public get Float64 MinValue = FromBits(0xFFEFFFFFFFFFFFFF);
+	public get Float64 Epsilon  = FromBits(0x0000000000000001);
+	public get Float64 Infinity = FromBits(0x7FF0000000000000);
+	public get Float64 MinNaN   = FromBits(0x7FF0000000000001);
+	public get Float64 MaxNaN   = FromBits(0x7FFFFFFFFFFFFFFF);
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => bool Equals;
+	public get func (Float64, Float64) => bool Equals;
 
 	<attributes>
 	<javascriptvalue>x<y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => bool LessThan;
+	public get func (Float64, Float64) => bool LessThan;
 
 	<attributes>
 	<javascriptvalue>x>y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => bool MoreThan;
+	public get func (Float64, Float64) => bool MoreThan;
 
 	<attributes>
 	<javascriptvalue>x<=y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => bool LessThanOrEquals;
+	public get func (Float64, Float64) => bool LessThanOrEquals;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => bool MoreThanOrEquals;
+	public get func (Float64, Float64) => bool MoreThanOrEquals;
 
 	<attributes>
 	<javascriptvalue>(x)=>isNaN(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => bool IsNaN = func (x) = not Equals(x,x);
+	public get func (Float64) => bool IsNaN = func (x) = not Equals(x,x);
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Add;
+	public get func (Float64, Float64) => Float64 Add;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Sub;
+	public get func (Float64, Float64) => Float64 Sub;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Mul;
+	public get func (Float64, Float64) => Float64 Mul;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x/</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Div;
+	public get func (Float64, Float64) => Float64 Div;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Mod;
+	public get func (Float64, Float64) => Float64 Mod;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>Math.pow(x,y)</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Pow;
+	public get func (Float64, Float64) => Float64 Pow;
 
 	<attributes>
 	<javascriptvalue>(x)=>-x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Negate;
+	public get func (Float64) => Float64 Negate;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.exp(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Exp;
+	public get func (Float64) => Float64 Exp;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.log(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Log;
+	public get func (Float64) => Float64 Log;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.sin(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Sin;
+	public get func (Float64) => Float64 Sin;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.cos(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Cos;
+	public get func (Float64) => Float64 Cos;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.tan(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Tan;
+	public get func (Float64) => Float64 Tan;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.asin(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Asin;
+	public get func (Float64) => Float64 Asin;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.acos(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Acos;
+	public get func (Float64) => Float64 Acos;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.atan(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Atan;
+	public get func (Float64) => Float64 Atan;
 
 	<attributes>
 	<javascriptvalue>(x,y)=>Math.atan2(x,y)</javascriptvalue>
 	</attributes>
-    public get func (Float64, Float64) => Float64 Atan2;
+	public get func (Float64, Float64) => Float64 Atan2;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.sinh(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Sinh;
+	public get func (Float64) => Float64 Sinh;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.cosh(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Cosh;
+	public get func (Float64) => Float64 Cosh;
 
 	<attributes>
 	<javascriptvalue>(x)=>Math.tanh(x)</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float64 Tanh;
+	public get func (Float64) => Float64 Tanh;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Int8    ToInt8;
+	public get func (Float64) => Int8    ToInt8;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => UInt8   ToUInt8;
+	public get func (Float64) => UInt8   ToUInt8;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Int16   ToInt16;
+	public get func (Float64) => Int16   ToInt16;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => UInt16  ToUInt16;
+	public get func (Float64) => UInt16  ToUInt16;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Int32   ToInt32;
+	public get func (Float64) => Int32   ToInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => UInt32  ToUInt32;
+	public get func (Float64) => UInt32  ToUInt32;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Int64   ToInt64;
+	public get func (Float64) => Int64   ToInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => UInt64  ToUInt64;
+	public get func (Float64) => UInt64  ToUInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>x</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Float32 ToFloat32;
+	public get func (Float64) => Float32 ToFloat32;
 
 	<attributes>
 	<javascriptrequire_i64/>
 	<javascriptvalue>(x)=>(new Uint32Array(Float64Array.of(x)))</javascriptvalue>
 	</attributes>
-    public get func (Float64) => Int64   BitsToInt64;
+	public get func (Float64) => Int64   BitsToInt64;
 
 	<attributes>
 	<javascriptrequire_i64/>
 	<javascriptvalue>(x)=>(new Uint32Array(Float64Array.of(x)))</javascriptvalue>
 	</attributes>
-    public get func (Float64) => UInt64  BitsToUInt64;
+	public get func (Float64) => UInt64  BitsToUInt64;
 
 	<attributes>
 	<javascriptvalue>(x)=>parseInt(x,16)</javascriptvalue>
 	</attributes>
-    public get func ([object Integer])                       => Float64 FromInteger;
+	public get func ([object Integer])                       => Float64 FromInteger;
 
 	<attributes>
 	<javascriptvalue>(x)=>parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
 	</attributes>
-    public get func ([object Numerator, object Denominator]) => Float64 FromFractional;
+	public get func ([object Numerator, object Denominator]) => Float64 FromFractional;
 
 	<attributes>
 	<pacedntjsrequire>i64</pacedntjsrequire>
 	<javascriptvalue>(x)=>(new Uint64Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
 	</attributes>
-    public get func ([object Integer])                       => Float64 FromBits;
+	public get func ([object Integer])                       => Float64 FromBits;
 }
 
 //convertions
@@ -1696,223 +1696,222 @@ convertion [object Numerator, object Denominator] : Float32 = Float32.FromFracti
 convertion [object Numerator, object Denominator] : Float64 = Float64.FromFractional;
 
 config snum_convertions {
-    implicit convertion Int8 : Int16;
-    implicit convertion Int8 : Int32;
-    implicit convertion Int8 : Int64;
-    implicit convertion Int16 : Int32;
-    implicit convertion Int16 : Int64;
-    implicit convertion Int32 : Int64;
-    implicit convertion UInt8 : Int16;
-    implicit convertion UInt8 : UInt16;
-    implicit convertion UInt8 : Int32;
-    implicit convertion UInt8 : UInt32;
-    implicit convertion UInt8 : Int64;
-    implicit convertion UInt8 : UInt64;
-    implicit convertion UInt16 : Int32;
-    implicit convertion UInt16 : UInt32;
+	implicit convertion Int8 : Int16
+	implicit convertion Int8 : Int32;
+	implicit convertion Int8 : Int64;
+	implicit convertion Int16 : Int32;
+	implicit convertion Int16 : Int64;
+	implicit convertion Int32 : Int64;
+	implicit convertion UInt8 : Int16;
+	implicit convertion UInt8 : UInt16;
+	implicit convertion UInt8 : Int32;
+	implicit convertion UInt8 : UInt32;
+	implicit convertion UInt8 : Int64;
+	implicit convertion UInt8 : UInt64;
+	implicit convertion UInt16 : Int32;
+	implicit convertion UInt16 : UInt32;
 
-    implicit convertion [object Integer] : Int8;
-    implicit convertion [object Integer] : UInt8;
-    implicit convertion [object Integer] : Int16;
-    implicit convertion [object Integer] : UInt16;
-    implicit convertion [object Integer] : Int32;
-    implicit convertion [object Integer] : UInt32;
-    implicit convertion [object Integer] : Int64;
-    implicit convertion [object Integer] : UInt64;
+	implicit convertion [object Integer] : Int8;
+	implicit convertion [object Integer] : UInt8;
+	implicit convertion [object Integer] : Int16;
+	implicit convertion [object Integer] : UInt16;
+	implicit convertion [object Integer] : Int32;
+	implicit convertion [object Integer] : UInt32;
+	implicit convertion [object Integer] : Int64;
+	implicit convertion [object Integer] : UInt64;
 }
 
 config snum_operators {
-    operator Int8    == Int8    = Int8.Equals;
-    operator UInt8   == UInt8   = UInt8.Equals;
-    operator Int16   == Int16   = Int16.Equals;
-    operator UInt16  == UInt16  = UInt16.Equals;
-    operator Int32   == Int32   = Int32.Equals;
-    operator UInt32  == UInt32  = UInt32.Equals;
-    operator Int64   == Int64   = Int64.Equals;
-    operator UInt64  == UInt64  = UInt64.Equals;
-    operator Float32 == Float32 = Float32.Equals;
-    operator Float64 == Float64 = Float64.Equals;
-    operator Int8    < Int8     = Int8.LessThan;
-    operator UInt8   < UInt8    = UInt8.LessThan;
-    operator Int16   < Int16    = Int16.LessThan;
-    operator UInt16  < UInt16   = UInt16.LessThan;
-    operator Int32   < Int32    = Int32.LessThan;
-    operator UInt32  < UInt32   = UInt32.LessThan;
-    operator Int64   < Int64    = Int64.LessThan;
-    operator UInt64  < UInt64   = UInt64.LessThan;
-    operator Float32 < Float32  = Float32.LessThan;
-    operator Float64 < Float64  = Float64.LessThan;
-    operator Int8    > Int8     = Int8.MoreThan;
-    operator UInt8   > UInt8    = UInt8.MoreThan;
-    operator Int16   > Int16    = Int16.MoreThan;
-    operator UInt16  > UInt16   = UInt16.MoreThan;
-    operator Int32   > Int32    = Int32.MoreThan;
-    operator UInt32  > UInt32   = UInt32.MoreThan;
-    operator Int64   > Int64    = Int64.MoreThan;
-    operator UInt64  > UInt64   = UInt64.MoreThan;
-    operator Float32 > Float32  = Float32.MoreThan;
-    operator Float64 > Float64  = Float64.MoreThan;
-    operator Int8    <= Int8    = Int8.LessThanOrEquals;
-    operator UInt8   <= UInt8   = UInt8.LessThanOrEquals;
-    operator Int16   <= Int16   = Int16.LessThanOrEquals;
-    operator UInt16  <= UInt16  = UInt16.LessThanOrEquals;
-    operator Int32   <= Int32   = Int32.LessThanOrEquals;
-    operator UInt32  <= UInt32  = UInt32.LessThanOrEquals;
-    operator Int64   <= Int64   = Int64.LessThanOrEquals;
-    operator UInt64  <= UInt64  = UInt64.LessThanOrEquals;
-    operator Float32 <= Float32 = Float32.LessThanOrEquals;
-    operator Float64 <= Float64 = Float64.LessThanOrEquals;
-    operator Int8    >= Int8    = Int8.MoreThanOrEquals;
-    operator UInt8   >= UInt8   = UInt8.MoreThanOrEquals;
-    operator Int16   >= Int16   = Int16.MoreThanOrEquals;
-    operator UInt16  >= UInt16  = UInt16.MoreThanOrEquals;
-    operator Int32   >= Int32   = Int32.MoreThanOrEquals;
-    operator UInt32  >= UInt32  = UInt32.MoreThanOrEquals;
-    operator Int64   >= Int64   = Int64.MoreThanOrEquals;
-    operator UInt64  >= UInt64  = UInt64.MoreThanOrEquals;
-    operator Float32 >= Float32 = Float32.MoreThanOrEquals;
-    operator Float64 >= Float64 = Float64.MoreThanOrEquals;
-    operator Int8    + Int8     = Int8.Add;
-    operator UInt8   + UInt8    = UInt8.Add;
-    operator Int16   + Int16    = Int16.Add;
-    operator UInt16  + UInt16   = UInt16.Add;
-    operator Int32   + Int32    = Int32.Add;
-    operator UInt32  + UInt32   = UInt32.Add;
-    operator Int64   + Int64    = Int64.Add;
-    operator UInt64  + UInt64   = UInt64.Add;
-    operator Float32 + Float32  = Float32.Add;
-    operator Float64 + Float64  = Float64.Add;
-    operator Int8    - Int8     =  Int8.Sub;
-    operator UInt8   - UInt8    = UInt8.Sub;
-    operator Int16   - Int16    = Int16.Sub;
-    operator UInt16  - UInt16   = UInt16.Sub;
-    operator Int32   - Int32    = Int32.Sub;
-    operator UInt32  - UInt32   = UInt32.Sub;
-    operator Int64   - Int64    = Int64.Sub;
-    operator UInt64  - UInt64   = UInt64.Sub;
-    operator Float32 - Float32  = Float32.Sub;
-    operator Float64 - Float64  = Float64.Sub;
-    operator Int8    * Int8     = Int8.Mul;
-    operator UInt8   * UInt8    = UInt8.Mul;
-    operator Int16   * Int16    = Int16.Mul;
-    operator UInt16  * UInt16   = UInt16.Mul;
-    operator Int32   * Int32    = Int32.Mul;
-    operator UInt32  * UInt32   = UInt32.Mul;
-    operator Int64   * Int64    = Int64.Mul;
-    operator UInt64  * UInt64   = UInt64.Mul;
-    operator Float32 * Float32  = Float32.Mul;
-    operator Float64 * Float64  = Float64.Mul;
-    operator Int8    / Int8     = Int8.Div;
-    operator UInt8   / UInt8    = UInt8.Div;
-    operator Int16   / Int16    = Int16.Div;
-    operator UInt16  / UInt16   = UInt16.Div;
-    operator Int32   / Int32    = Int32.Div;
-    operator UInt32  / UInt32   = UInt32.Div;
-    operator Int64   / Int64    = Int64.Div;
-    operator UInt64  / UInt64   = UInt64.Div;
-    operator Float32 / Float32  = Float32.Div;
-    operator Float64 / Float64  = Float64.Div;
-    operator Int8    % Int8     = Int8.Mod;
-    operator UInt8   % UInt8    = UInt8.Mod;
-    operator Int16   % Int16    = Int16.Mod;
-    operator UInt16  % UInt16   = UInt16.Mod;
-    operator Int32   % Int32    = Int32.Mod;
-    operator UInt32  % UInt32   = UInt32.Mod;
-    operator Int64   % Int64    = Int64.Mod;
-    operator UInt64  % UInt64   = UInt64.Mod;
-    operator Float32 % Float32  = Float32.Mod;
-    operator Float64 % Float64  = Float64.Mod;
-    operator Int8    ^ Int8     = Int8.Pow;
-    operator UInt8   ^ UInt8    = UInt8.Pow;
-    operator Int16   ^ Int16    = Int16.Pow;
-    operator UInt16  ^ UInt16   = UInt16.Pow;
-    operator Int32   ^ Int32    = Int32.Pow;
-    operator UInt32  ^ UInt32   = UInt32.Pow;
-    operator Int64   ^ Int64    = Int64.Pow;
-    operator UInt64  ^ UInt64   = UInt64.Pow;
-    operator Float32 ^ Float32  = Float32.Pow;
-    operator Float64 ^ Float64  = Float64.Pow;
-    operator Int8   'bitand' Int8   = Int8.BitAnd;
-    operator UInt8  'bitand' UInt8  = UInt8.BitAnd;
-    operator Int16  'bitand' Int16  = Int16.BitAnd;
-    operator UInt16 'bitand' UInt16 = UInt16.BitAnd;
-    operator Int32  'bitand' Int32  = Int32.BitAnd;
-    operator UInt32 'bitand' UInt32 = UInt32.BitAnd;
-    operator Int64  'bitand' Int64  = Int64.BitAnd;
-    operator UInt64 'bitand' UInt64 = UInt64.BitAnd;
-    operator Int8   'bitor'  Int8   = Int8.BitOr;
-    operator UInt8  'bitor'  UInt8  = UInt8.BitOr;
-    operator Int16  'bitor'  Int16  = Int16.BitOr;
-    operator UInt16 'bitor'  UInt16 = UInt16.BitOr;
-    operator Int32  'bitor'  Int32  = Int32.BitOr;
-    operator UInt32 'bitor'  UInt32 = UInt32.BitOr;
-    operator Int64  'bitor'  Int64  = Int64.BitOr;
-    operator UInt64 'bitor'  UInt64 = UInt64.BitOr;
-    operator Int8   'bitxor' Int8   = Int8.BitXor;
-    operator UInt8  'bitxor' UInt8  = UInt8.BitXor;
-    operator Int16  'bitxor' Int16  = Int16.BitXor;
-    operator UInt16 'bitxor' UInt16 = UInt16.BitXor;
-    operator Int32  'bitxor' Int32  = Int32.BitXor;
-    operator UInt32 'bitxor' UInt32 = UInt32.BitXor;
-    operator Int64  'bitxor' Int64  = Int64.BitXor;
-    operator UInt64 'bitxor' UInt64 = UInt64.BitXor;
-    operator Int8   'bitnot' Int8   = Int8.BitNot;
-    operator UInt8  'bitnot' UInt8  = UInt8.BitNot;
-    operator Int16  'bitnot' Int16  = Int16.BitNot;
-    operator UInt16 'bitnot' UInt16 = UInt16.BitNot;
-    operator Int32  'bitnot' Int32  = Int32.BitNot;
-    operator UInt32 'bitnot' UInt32 = UInt32.BitNot;
-    operator Int64  'bitnot' Int64  = Int64.BitNot;
-    operator UInt64 'bitnot' UInt64 = UInt64.BitNot;
-    operator - Int8    = Int8.Negate;
-    operator - Int16   = Int16.Negate;
-    operator - Int32   = Int32.Negate;
-    operator - Int64   = Int64.Negate;
-    operator - Float32 = Float32.Negate;
-    operator - Float64 = Float64.Negate;
-    operator 'isnan' Float32 = Float32.IsNaN;
-    operator 'exp'   Float32 = Float32.Exp;
-    operator 'log'   Float32 = Float32.Log;
-    operator 'sin'   Float32 = Float32.Sin;
-    operator 'cos'   Float32 = Float32.Cos;
-    operator 'tan'   Float32 = Float32.Tan;
-    operator 'asin'  Float32 = Float32.Asin;
-    operator 'acos'  Float32 = Float32.Acos;
-    operator 'atan'  Float32 = Float32.Atan;
-    operator Float32 'atan2' Float32 = Float32.Atan2;
-    operator 'sinh'  Float32 = Float32.Sinh;
-    operator 'cosh'  Float32 = Float32.Cosh;
-    operator 'tanh'  Float32 = Float32.Tanh;
-    operator 'isnan' Float64 = Float64.IsNaN;
-    operator 'exp'   Float64 = Float64.Exp;
-    operator 'log'   Float64 = Float64.Log;
-    operator 'sin'   Float64 = Float64.Sin;
-    operator 'cos'   Float64 = Float64.Cos;
-    operator 'tan'   Float64 = Float64.Tan;
-    operator 'asin'  Float64 = Float64.Asin;
-    operator 'acos'  Float64 = Float64.Acos;
-    operator 'atan'  Float64 = Float64.Atan;
-    operator Float64 'atan2' Float64 = Float64.Atan2;
-    operator 'sinh'  Float64 = Float64.Sinh;
-    operator 'cosh'  Float64 = Float64.Cosh;
-    operator 'tanh'  Float64 = Float64.Tanh;
+	operator Int8    == Int8    = Int8.Equals;
+	operator UInt8   == UInt8   = UInt8.Equals;
+	operator Int16   == Int16   = Int16.Equals;
+	operator UInt16  == UInt16  = UInt16.Equals;
+	operator Int32   == Int32   = Int32.Equals;
+	operator UInt32  == UInt32  = UInt32.Equals;
+	operator Int64   == Int64   = Int64.Equals;
+	operator UInt64  == UInt64  = UInt64.Equals;
+	operator Float32 == Float32 = Float32.Equals;
+	operator Float64 == Float64 = Float64.Equals;
+	operator Int8    < Int8     = Int8.LessThan;
+	operator UInt8   < UInt8    = UInt8.LessThan;
+	operator Int16   < Int16    = Int16.LessThan;
+	operator UInt16  < UInt16   = UInt16.LessThan;
+	operator Int32   < Int32    = Int32.LessThan;
+	operator UInt32  < UInt32   = UInt32.LessThan;
+	operator Int64   < Int64    = Int64.LessThan;
+	operator UInt64  < UInt64   = UInt64.LessThan;
+	operator Float32 < Float32  = Float32.LessThan;
+	operator Float64 < Float64  = Float64.LessThan;
+	operator Int8    > Int8     = Int8.MoreThan;
+	operator UInt8   > UInt8    = UInt8.MoreThan;
+	operator Int16   > Int16    = Int16.MoreThan;
+	operator UInt16  > UInt16   = UInt16.MoreThan;
+	operator Int32   > Int32    = Int32.MoreThan;
+	operator UInt32  > UInt32   = UInt32.MoreThan;
+	operator Int64   > Int64    = Int64.MoreThan;
+	operator UInt64  > UInt64   = UInt64.MoreThan;
+	operator Float32 > Float32  = Float32.MoreThan;
+	operator Float64 > Float64  = Float64.MoreThan;
+	operator Int8    <= Int8    = Int8.LessThanOrEquals;
+	operator UInt8   <= UInt8   = UInt8.LessThanOrEquals;
+	operator Int16   <= Int16   = Int16.LessThanOrEquals;
+	operator UInt16  <= UInt16  = UInt16.LessThanOrEquals;
+	operator Int32   <= Int32   = Int32.LessThanOrEquals;
+	operator UInt32  <= UInt32  = UInt32.LessThanOrEquals;
+	operator Int64   <= Int64   = Int64.LessThanOrEquals;
+	operator UInt64  <= UInt64  = UInt64.LessThanOrEquals;
+	operator Float32 <= Float32 = Float32.LessThanOrEquals;
+	operator Float64 <= Float64 = Float64.LessThanOrEquals;
+	operator Int8    >= Int8    = Int8.MoreThanOrEquals;
+	operator UInt8   >= UInt8   = UInt8.MoreThanOrEquals;
+	operator Int16   >= Int16   = Int16.MoreThanOrEquals;
+	operator UInt16  >= UInt16  = UInt16.MoreThanOrEquals;
+	operator Int32   >= Int32   = Int32.MoreThanOrEquals;
+	operator UInt32  >= UInt32  = UInt32.MoreThanOrEquals;
+	operator Int64   >= Int64   = Int64.MoreThanOrEquals;
+	operator UInt64  >= UInt64  = UInt64.MoreThanOrEquals;
+	operator Float32 >= Float32 = Float32.MoreThanOrEquals;
+	operator Float64 >= Float64 = Float64.MoreThanOrEquals;
+	operator Int8    + Int8     = Int8.Add;
+	operator UInt8   + UInt8    = UInt8.Add;
+	operator Int16   + Int16    = Int16.Add;
+	operator UInt16  + UInt16   = UInt16.Add;
+	operator Int32   + Int32    = Int32.Add;
+	operator UInt32  + UInt32   = UInt32.Add;
+	operator Int64   + Int64    = Int64.Add;
+	operator UInt64  + UInt64   = UInt64.Add;
+	operator Float32 + Float32  = Float32.Add;
+	operator Float64 + Float64  = Float64.Add;
+	operator Int8    - Int8     =  Int8.Sub;
+	operator UInt8   - UInt8    = UInt8.Sub;
+	operator Int16   - Int16    = Int16.Sub;
+	operator UInt16  - UInt16   = UInt16.Sub;
+	operator Int32   - Int32    = Int32.Sub;
+	operator UInt32  - UInt32   = UInt32.Sub;
+	operator Int64   - Int64    = Int64.Sub;
+	operator UInt64  - UInt64   = UInt64.Sub;
+	operator Float32 - Float32  = Float32.Sub;
+	operator Float64 - Float64  = Float64.Sub;
+	operator Int8    * Int8     = Int8.Mul;
+	operator UInt8   * UInt8    = UInt8.Mul;
+	operator Int16   * Int16    = Int16.Mul;
+	operator UInt16  * UInt16   = UInt16.Mul;
+	operator Int32   * Int32    = Int32.Mul;
+	operator UInt32  * UInt32   = UInt32.Mul;
+	operator Int64   * Int64    = Int64.Mul;
+	operator UInt64  * UInt64   = UInt64.Mul;
+	operator Float32 * Float32  = Float32.Mul;
+	operator Float64 * Float64  = Float64.Mul;
+	operator Int8    / Int8     = Int8.Div;
+	operator UInt8   / UInt8    = UInt8.Div;
+	operator Int16   / Int16    = Int16.Div;
+	operator UInt16  / UInt16   = UInt16.Div;
+	operator Int32   / Int32    = Int32.Div;
+	operator UInt32  / UInt32   = UInt32.Div;
+	operator Int64   / Int64    = Int64.Div;
+	operator UInt64  / UInt64   = UInt64.Div;
+	operator Float32 / Float32  = Float32.Div;
+	operator Float64 / Float64  = Float64.Div;
+	operator Int8    % Int8     = Int8.Mod;
+	operator UInt8   % UInt8    = UInt8.Mod;
+	operator Int16   % Int16    = Int16.Mod;
+	operator UInt16  % UInt16   = UInt16.Mod;
+	operator Int32   % Int32    = Int32.Mod;
+	operator UInt32  % UInt32   = UInt32.Mod;
+	operator Int64   % Int64    = Int64.Mod;
+	operator UInt64  % UInt64   = UInt64.Mod;
+	operator Float32 % Float32  = Float32.Mod;
+	operator Float64 % Float64  = Float64.Mod;
+	operator Int8    ^ Int8     = Int8.Pow;
+	operator UInt8   ^ UInt8    = UInt8.Pow;
+	operator Int16   ^ Int16    = Int16.Pow;
+	operator UInt16  ^ UInt16   = UInt16.Pow;
+	operator Int32   ^ Int32    = Int32.Pow;
+	operator UInt32  ^ UInt32   = UInt32.Pow;
+	operator Int64   ^ Int64    = Int64.Pow;
+	operator UInt64  ^ UInt64   = UInt64.Pow;
+	operator Float32 ^ Float32  = Float32.Pow;
+	operator Float64 ^ Float64  = Float64.Pow;
+	operator Int8   'bitand' Int8   = Int8.BitAnd;
+	operator UInt8  'bitand' UInt8  = UInt8.BitAnd;
+	operator Int16  'bitand' Int16  = Int16.BitAnd;
+	operator UInt16 'bitand' UInt16 = UInt16.BitAnd;
+	operator Int32  'bitand' Int32  = Int32.BitAnd;
+	operator UInt32 'bitand' UInt32 = UInt32.BitAnd;
+	operator Int64  'bitand' Int64  = Int64.BitAnd;
+	operator UInt64 'bitand' UInt64 = UInt64.BitAnd;
+	operator Int8   'bitor'  Int8   = Int8.BitOr;
+	operator UInt8  'bitor'  UInt8  = UInt8.BitOr;
+	operator Int16  'bitor'  Int16  = Int16.BitOr;
+	operator UInt16 'bitor'  UInt16 = UInt16.BitOr;
+	operator Int32  'bitor'  Int32  = Int32.BitOr;
+	operator UInt32 'bitor'  UInt32 = UInt32.BitOr;
+	operator Int64  'bitor'  Int64  = Int64.BitOr;
+	operator UInt64 'bitor'  UInt64 = UInt64.BitOr;
+	operator Int8   'bitxor' Int8   = Int8.BitXor;
+	operator UInt8  'bitxor' UInt8  = UInt8.BitXor;
+	operator Int16  'bitxor' Int16  = Int16.BitXor;
+	operator UInt16 'bitxor' UInt16 = UInt16.BitXor;
+	operator Int32  'bitxor' Int32  = Int32.BitXor;
+	operator UInt32 'bitxor' UInt32 = UInt32.BitXor;
+	operator Int64  'bitxor' Int64  = Int64.BitXor;
+	operator UInt64 'bitxor' UInt64 = UInt64.BitXor;
+	operator Int8   'bitnot' Int8   = Int8.BitNot;
+	operator UInt8  'bitnot' UInt8  = UInt8.BitNot;
+	operator Int16  'bitnot' Int16  = Int16.BitNot;
+	operator UInt16 'bitnot' UInt16 = UInt16.BitNot;
+	operator Int32  'bitnot' Int32  = Int32.BitNot;
+	operator UInt32 'bitnot' UInt32 = UInt32.BitNot;
+	operator Int64  'bitnot' Int64  = Int64.BitNot;
+	operator UInt64 'bitnot' UInt64 = UInt64.BitNot;
+	operator - Int8    = Int8.Negate;
+	operator - Int16   = Int16.Negate;
+	operator - Int32   = Int32.Negate;
+	operator - Int64   = Int64.Negate;
+	operator - Float32 = Float32.Negate;
+	operator - Float64 = Float64.Negate;
+	operator 'isnan' Float32 = Float32.IsNaN;
+	operator 'exp'   Float32 = Float32.Exp;
+	operator 'log'   Float32 = Float32.Log;
+	operator 'sin'   Float32 = Float32.Sin;
+	operator 'cos'   Float32 = Float32.Cos;
+	operator 'tan'   Float32 = Float32.Tan;
+	operator 'asin'  Float32 = Float32.Asin;
+	operator 'acos'  Float32 = Float32.Acos;
+	operator 'atan'  Float32 = Float32.Atan;
+	operator Float32 'atan2' Float32 = Float32.Atan2;
+	operator 'sinh'  Float32 = Float32.Sinh;
+	operator 'cosh'  Float32 = Float32.Cosh;
+	operator 'tanh'  Float32 = Float32.Tanh;
+	operator 'isnan' Float64 = Float64.IsNaN;
+	operator 'exp'   Float64 = Float64.Exp;
+	operator 'log'   Float64 = Float64.Log;
+	operator 'sin'   Float64 = Float64.Sin;
+	operator 'cos'   Float64 = Float64.Cos;
+	operator 'tan'   Float64 = Float64.Tan;
+	operator 'asin'  Float64 = Float64.Asin;
+	operator 'acos'  Float64 = Float64.Acos;
+	operator 'atan'  Float64 = Float64.Atan;
+	operator Float64 'atan2' Float64 = Float64.Atan2;operator 'sinh'  Float64 = Float64.Sinh;
+	operator 'cosh'  Float64 = Float64.Cosh;
+	operator 'tanh'  Float64 = Float64.Tanh;
 }
 
 config snum_aliases {
-    alias byte = UInt8;
-    alias int = Int32;
-    alias uint = UInt32;
-    alias float = Float64;
+	alias byte = UInt8;
+	alias int = Int32;
+	alias uint = UInt32;
+	alias float = Float64;
 }
 
 config snum_literals {
-    automatic convertion [object Integer] : Int32;
-    automatic convertion [object Denominator, object Numerator] : Float64;
+	automatic convertion [object Integer] : Int32;
+	automatic convertion [object Denominator, object Numerator] : Float64;
 }
 
 config snum_config {
-    use snum_convertions;
-    use snum_operators;
-    use snum_aliases;
-    use snum_literals;
+	use snum_convertions;
+	use snum_operators;
+	use snum_aliases;
+	use snum_literals;
 }

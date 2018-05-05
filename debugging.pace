@@ -11,18 +11,18 @@ purpose: platform-specific debugging functionality
 </attributes>
 element Debug {
 
-    //the debug logging function, highly platform specific
+	//the debug logging function, highly platform specific
 	<attributes>
 	<document>Logs the given object. (ex. prints to the console)</document>
 	<javascriptvalue>(x)=>{console.log("[Debug.Log] "+x);}</javascriptvalue>
 	</attributes>
-    public get func(object) Log;
+	public get func(object) Log;
 
-    //pauses the application
+	//pauses the application
 	<attributes>
 	<document>Pauses the application.</document>
 	<javascriptvalue>()=>{alert("[Debug.Pause] Application paused")}</javascriptvalue>
 	</attributes>
-    public get func() Pause;
+	public get func() Pause;
 
 }
