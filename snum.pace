@@ -20,129 +20,129 @@ element Int8 {
 	public get Int8 MinValue = FromInteger(0x80);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Mod;
 
 	public get func (Int8, Int8) => Int8 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):Int8;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Int8 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=>~x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Int8 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => UInt8   ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Int16   ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => UInt16  ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Int32   ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => Int8 FromInteger;
 }
@@ -161,129 +161,129 @@ element UInt8 {
 	public get UInt8 MinValue = FromInteger(0x00);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;;y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 Mod;
 
 	public get func (UInt8, UInt8) => UInt8 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):UInt8;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (UInt8, UInt8) => UInt8 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => UInt8 Negate;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>~x</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => UInt8 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => Int16   ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => UInt16  ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => Int32   ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => UInt8 FromInteger;
 }
@@ -302,129 +302,129 @@ element Int16 {
 	public get Int16 MinValue = FromInteger(0x0008);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 Mod;
 
 	public get func (Int16, Int16) => Int16 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):Int16;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (Int16, Int16) => Int16 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Int16 Negate;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>~x</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Int16 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => UInt8 ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => UInt16  ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Int32   ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => Int16 FromInteger;
 }
@@ -443,129 +443,129 @@ element UInt16 {
     public get UInt16 MinValue = FromInteger(0x0000);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 Mod;
 
 	public get func (UInt16, UInt16) => UInt16 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):UInt16;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => UInt16 Negate;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>~x</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => UInt16 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => UInt8 ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => Int16  ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => Int32   ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => UInt16 FromInteger;
 }
@@ -584,129 +584,129 @@ element Int32 {
     public get Int32 MinValue = FromInteger(0x80000000);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 Mod;
 
 	public get func (Int32, Int32) => Int32 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):Int32;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (Int32, Int32) => Int32 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Int32 Negate;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>~x</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Int32 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => UInt8 ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Int16  ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => UInt16 ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => Int32 FromInteger;
 }
@@ -725,129 +725,129 @@ element UInt32 {
     public get UInt32 MinValue = FromInteger(0x00000000);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 Mod;
 
 	public get func (UInt32, UInt32) => UInt32 Pow = func (x, y) = Int64.Pow(x:Int64, y:Int64):UInt32;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (UInt32, UInt32) => UInt32 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => UInt32 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=>~x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => UInt32 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => UInt8 ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => Int16  ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => UInt16 ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => Int32 ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => UInt32 FromInteger;
 }
@@ -866,64 +866,64 @@ element Int64 {
     public get Int64 MinValue = FromInteger(0x8000000000000000);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 Mod;
 
 	public get func (Int64, Int64) => Int64 Pow =
 		func(base, exp) = {
 			//exp by squaring
-			result = 1:UInt64;
+			result = 1:Int64;
 			{
-				if LessThanOrEquals(exp, 1:UInt64) then
+				if LessThanOrEquals(exp, 1:Int64) then
 					result = Mul(result, base);
-				exp = Div(exp, 2:UInt64);
-				if Equals(exp, 0:UInt64) then break;
+				exp = Div(exp, 2:Int64);
+				if Equals(exp, 0:Int64) then break;
 				base = Mul(base,base);
 				continue;
 			}
@@ -931,77 +931,77 @@ element Int64 {
 		}
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (Int64, Int64) => Int64 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Int64 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=>~x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Int64 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => UInt8 ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Int16  ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => UInt16 ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Int32 ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => UInt32 ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => Int64 FromInteger;
 }
@@ -1020,52 +1020,52 @@ element UInt64 {
     public get UInt64 MinValue = FromInteger(0x0000000000000000);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x<=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.floor(x/y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.floor(x/y)</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 Mod;
 
@@ -1085,77 +1085,77 @@ element UInt64 {
 		}
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x&y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x&amp;y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 BitAnd;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x|y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x|y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 BitOr;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x^y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (UInt64, UInt64) => UInt64 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => UInt64 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=>~x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => UInt64 BitNot;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => Int8   ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => UInt8 ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => Int16  ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => UInt16 ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => Int32 ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => UInt32 ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => Int64  ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => Float32 ToFloat32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x<javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)<javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Integer]) => UInt64 FromInteger;
 }
@@ -1178,200 +1178,200 @@ element Float32 {
 	public get Float32 MaxNaN   = FromBits(0x7FFFFFFF);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>x<y</javascriptvalue>
+	<javascriptvalue>x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>x>y</javascriptvalue>
+	<javascriptvalue>x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>x<=y</javascriptvalue>
+	<javascriptvalue>x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x)=>isNaN(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;isNaN(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => bool IsNaN = func (x) = not Equals(x,x);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x/</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x/</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Mod;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.pow(x,y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.pow(x,y)</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Pow;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.exp(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.exp(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Exp;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.log(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.log(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Log;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.sin(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.sin(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Sin;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.cos(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.cos(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Cos;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.tan(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.tan(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Tan;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.asin(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.asin(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Asin;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.acos(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.acos(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Acos;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.atan(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.atan(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Atan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.atan2(x,y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.atan2(x,y)</javascriptvalue>
 	</attributes>
 	public get func (Float32, Float32) => Float32 Atan2;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.sinh(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.sinh(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Sinh;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.cosh(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.cosh(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Cosh;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.tanh(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.tanh(x)</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Tanh;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Int8    ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => UInt8   ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Int16   ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => UInt16  ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Int32   ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float64 ToFloat64;
 
 	<attributes>
-	<javascriptvalue>(x)=>(Float32Array.of(x))[0]</javascriptvalue>
+	<javascriptvalue>(x)=&gt;(Float32Array.of(x))[0]</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Int32   BitsToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>(Float32Array.of(x))[0]</javascriptvalue>
+	<javascriptvalue>(x)=&gt;(Float32Array.of(x))[0]</javascriptvalue>
 	</attributes>
 	public get func (Float32) => UInt32  BitsToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer])                       => Float32 FromInteger;
+	public get func ([object Integer]) => Float32 FromInteger;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Numerator, object Denominator]) => Float32 FromFractional;
 
 	<attributes>
 	<javascriptrequire_i64/>
-	<javascriptvalue>(x)=>(new Float32Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
+	<javascriptvalue>(x)=&gt;(new Float32Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
 	</attributes>
-	public get func ([object Integer])                       => Float32 FromBits;
+	public get func ([object Integer]) => Float32 FromBits;
 }
 
 <!--
@@ -1392,202 +1392,202 @@ element Float64 {
 	public get Float64 MaxNaN   = FromBits(0x7FFFFFFFFFFFFFFF);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x==y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x==y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => bool Equals;
 
 	<attributes>
-	<javascriptvalue>x<y</javascriptvalue>
+	<javascriptvalue>x&lt;y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => bool LessThan;
 
 	<attributes>
-	<javascriptvalue>x>y</javascriptvalue>
+	<javascriptvalue>x&gt;y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => bool MoreThan;
 
 	<attributes>
-	<javascriptvalue>x<=y</javascriptvalue>
+	<javascriptvalue>x&lt;=y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => bool LessThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x>=y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x>=y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x)=>isNaN(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;isNaN(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => bool IsNaN = func (x) = not Equals(x,x);
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Mul;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x/</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x/</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Div;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>x%y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;x%y</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Mod;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.pow(x,y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.pow(x,y)</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Pow;
 
 	<attributes>
-	<javascriptvalue>(x)=>-x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.exp(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.exp(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Exp;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.log(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.log(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Log;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.sin(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.sin(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Sin;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.cos(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.cos(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Cos;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.tan(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.tan(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Tan;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.asin(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.asin(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Asin;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.acos(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.acos(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Acos;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.atan(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.atan(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Atan;
 
 	<attributes>
-	<javascriptvalue>(x,y)=>Math.atan2(x,y)</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;Math.atan2(x,y)</javascriptvalue>
 	</attributes>
 	public get func (Float64, Float64) => Float64 Atan2;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.sinh(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.sinh(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Sinh;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.cosh(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.cosh(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Cosh;
 
 	<attributes>
-	<javascriptvalue>(x)=>Math.tanh(x)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;Math.tanh(x)</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Tanh;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Int8    ToInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => UInt8   ToUInt8;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Int16   ToInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => UInt16  ToUInt16;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Int32   ToInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => UInt32  ToUInt32;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Int64   ToInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => UInt64  ToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>x</javascriptvalue>
+	<javascriptvalue>(x)=&gt;x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float32 ToFloat32;
 
 	<attributes>
 	<javascriptrequire_i64/>
-	<javascriptvalue>(x)=>(new Uint32Array(Float64Array.of(x)))</javascriptvalue>
+	<javascriptvalue>(x)=&gt;(new Uint32Array(Float64Array.of(x)))</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Int64   BitsToInt64;
 
 	<attributes>
 	<javascriptrequire_i64/>
-	<javascriptvalue>(x)=>(new Uint32Array(Float64Array.of(x)))</javascriptvalue>
+	<javascriptvalue>(x)=&gt;(new Uint32Array(Float64Array.of(x)))</javascriptvalue>
 	</attributes>
 	public get func (Float64) => UInt64  BitsToUInt64;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x,16)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer])                       => Float64 FromInteger;
+	public get func ([object Integer]) => Float64 FromInteger;
 
 	<attributes>
-	<javascriptvalue>(x)=>parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
+	<javascriptvalue>(x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
 	</attributes>
 	public get func ([object Numerator, object Denominator]) => Float64 FromFractional;
 
 	<attributes>
 	<pacedntjsrequire>i64</pacedntjsrequire>
-	<javascriptvalue>(x)=>(new Uint64Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
+	<javascriptvalue>(x)=&gt;(new Uint64Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
 	</attributes>
-	public get func ([object Integer])                       => Float64 FromBits;
+	public get func ([object Integer]) => Float64 FromBits;
 }
 
 //convertions
@@ -1694,6 +1694,8 @@ convertion [object Integer]                       : Float32 = Float32.FromIntege
 convertion [object Integer]                       : Float64 = Float64.FromInteger;
 convertion [object Numerator, object Denominator] : Float32 = Float32.FromFractional;
 convertion [object Numerator, object Denominator] : Float64 = Float64.FromFractional;
+
+//configs
 
 config snum_convertions {
 	implicit convertion Int8 : Int16;
@@ -1856,14 +1858,14 @@ config snum_operators {
 	operator UInt32 'bitxor' UInt32 = UInt32.BitXor;
 	operator Int64  'bitxor' Int64  = Int64.BitXor;
 	operator UInt64 'bitxor' UInt64 = UInt64.BitXor;
-	operator Int8   'bitnot' Int8   = Int8.BitNot;
-	operator UInt8  'bitnot' UInt8  = UInt8.BitNot;
-	operator Int16  'bitnot' Int16  = Int16.BitNot;
-	operator UInt16 'bitnot' UInt16 = UInt16.BitNot;
-	operator Int32  'bitnot' Int32  = Int32.BitNot;
-	operator UInt32 'bitnot' UInt32 = UInt32.BitNot;
-	operator Int64  'bitnot' Int64  = Int64.BitNot;
-	operator UInt64 'bitnot' UInt64 = UInt64.BitNot;
+	operator 'bitnot' Int8   = Int8.BitNot;
+	operator 'bitnot' UInt8  = UInt8.BitNot;
+	operator 'bitnot' Int16  = Int16.BitNot;
+	operator 'bitnot' UInt16 = UInt16.BitNot;
+	operator 'bitnot' Int32  = Int32.BitNot;
+	operator 'bitnot' UInt32 = UInt32.BitNot;
+	operator 'bitnot' Int64  = Int64.BitNot;
+	operator 'bitnot' UInt64 = UInt64.BitNot;
 	operator - Int8    = Int8.Negate;
 	operator - Int16   = Int16.Negate;
 	operator - Int32   = Int32.Negate;
@@ -1909,6 +1911,7 @@ config snum_literals {
 	automatic convertion [object Denominator, object Numerator] : Float64;
 }
 
+//snum_config uses all the other configs
 config snum_config {
 	use snum_convertions;
 	use snum_operators;
