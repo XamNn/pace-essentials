@@ -1696,7 +1696,7 @@ convertion [object Numerator, object Denominator] : Float32 = Float32.FromFracti
 convertion [object Numerator, object Denominator] : Float64 = Float64.FromFractional;
 
 config snum_convertions {
-	implicit convertion Int8 : Int16
+	implicit convertion Int8 : Int16;
 	implicit convertion Int8 : Int32;
 	implicit convertion Int8 : Int64;
 	implicit convertion Int16 : Int32;

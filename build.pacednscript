@@ -2,4 +2,4 @@
 # pacedn "run build.pacednscript"
 
 process snum.pace -e
-process debuggin.pace -e
+process debugging.pace -e
