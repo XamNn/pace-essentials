@@ -1,5 +1,5 @@
 # run the command on the next line in this directory to build
 # pacedn "run build.pacednscript"
 
-run snum-build.pacednscript
-run debugging-build.pacednscript
+process snum.pace -e
+process debuggin.pace -e
