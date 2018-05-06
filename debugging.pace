@@ -14,15 +14,46 @@ element Debug {
 	//the debug logging function, highly platform specific
 	<attributes>
 	<document>Logs the given object. (ex. prints to the console)</document>
-	<javascriptvalue>(x)=>{console.log("[Debug.Log] "+x);}</javascriptvalue>
+	<javascriptvalue>
+(x)=>{
+	console.log("[Debug.Log] "+x);
+}
+	</javascriptvalue>
+	<javascriptdebugvalue>
+(x)=>{
+	if(window.cstack===undefined)console.log("[Debug.Log] "+x);
+	else console.log("[Debug.Log] ("+window.cstack[window.cstack.length-1]+") "+x);
+}
+	</javascriptdebugvalue>
 	</attributes>
 	public get func(object) Log;
 
 	//pauses the application
 	<attributes>
 	<document>Pauses the application.</document>
-	<javascriptvalue>()=>{alert("[Debug.Pause] Application paused")}</javascriptvalue>
+	<javascriptvalue>(x)=>{}</javascriptvalue>
+	<javascriptdebugvalue>
+()=>{
+	if(window.cstack===undefined)alert("[Debug.Pause] Application paused");
+	else alert("[Debug.Pause] ("+window.cstack[window.cstack.length-1]+") Application paused");
+}
+	</javascriptdebugvalue>
 	</attributes>
 	public get func() Pause;
+
+	//if condition is not true, tell to the user and exit application
+	<attributes>
+	<document>Exits the application if the specified condition is not true</document>
+	<javascriptvalue>(x)=>{}</javascriptvalue>
+	<javascriptdebugvalue>
+(x)=>{
+	if(x)return;
+	if(window.cstack===undefined)alert("[Debug.Pause] Assert failed");
+	else alert("[Debug.Assert] ("+window.cstack[window.cstack.length-1]+") Assert failed");
+	throw "assertfailed";
+}
+	</javascriptdebugvalue>
+	</attributes>
+	public get func(bool) Assert;
 
 }

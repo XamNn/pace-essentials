@@ -15,7 +15,13 @@ Precision: fixed, 8 significant bits
 <document>Provides a type and functions for 8-bit signed integers.</document>
 </attributes>
 element Int8 {
+
+	<attributes>
+	<size>1</size>
+	<ctype>int8_t</ctype>
+	</attributes>
 	struct { }
+
 	public get Int8 MaxValue = FromInteger(0x7F);
 	public get Int8 MinValue = FromInteger(0x80);
 
@@ -156,6 +162,11 @@ Precision: fixed, 8 significant bits
 <document>Provides a type and functions for 8-bit unsigned integers.</document>
 </attributes>
 element UInt8 {
+
+	<attributes>
+	<size>1</size>
+	<ctype>uint8_t</ctype>
+	</attributes>
 	struct { }
 	public get UInt8 MaxValue = FromInteger(0xFF);
 	public get UInt8 MinValue = FromInteger(0x00);
@@ -297,7 +308,13 @@ Precision: fixed, 16 significant bits
 <document>Provides a type and functions for 16-bit signed integers.</document>
 </attributes>
 element Int16 {
+
+	<attributes>
+	<size>2</size>
+	<ctype>int16_t</ctype>
+	</attributes>
 	struct { }
+
 	public get Int16 MaxValue = FromInteger(0x7FFF);
 	public get Int16 MinValue = FromInteger(0x0008);
 
@@ -438,7 +455,13 @@ Precision: fixed, 16 significant bits
 <document>Provides a type and functions for 16-bit unsigned integers.</document>
 </attributes>
 element UInt16 {
+
+	<attributes>
+	<size>2</size>
+	<ctype>uint16_t</ctype>
+	</attributes>
     struct { }
+
     public get UInt16 MaxValue = FromInteger(0xFFFF);
     public get UInt16 MinValue = FromInteger(0x0000);
 
@@ -579,7 +602,13 @@ Precision: fixed, 32 significant bits
 <document>Provides a type and functions for 32-bit signed integers.</document>
 </attributes>
 element Int32 {
+
+	<attributes>
+	<size>4</size>
+	<ctype>int32_t</ctype>
+	</attributes>
     struct { }
+
     public get Int32 MaxValue = FromInteger(0x7FFFFFFF);
     public get Int32 MinValue = FromInteger(0x80000000);
 
@@ -720,7 +749,13 @@ Precision: fixed, 32 significant bits
 <document>Provides a type and functions for 32-bit unsigned integers.</document>
 </attributes>
 element UInt32 {
+
+	<attributes>
+	<size>4</size>
+	<ctype>uint32_t</ctype>
+	</attributes>
     struct { }
+
     public get UInt32 MaxValue = FromInteger(0xFFFFFFFF);
     public get UInt32 MinValue = FromInteger(0x00000000);
 
@@ -861,7 +896,13 @@ Precision: fixed, 64 significant bits
 <document>Provides a type and functions for 64-bit signed integers.</document>
 </attributes>
 element Int64 {
+
+	<attributes>
+	<size>8</size>
+	<ctype>int64_t</ctype>
+	</attributes>
     struct { }
+
     public get Int64 MaxValue = FromInteger(0x7FFFFFFFFFFFFFFF);
     public get Int64 MinValue = FromInteger(0x8000000000000000);
 
@@ -1015,7 +1056,13 @@ Precision: fixed, 64 significant bits
 <document>Provides a type and functions for 64-bit unsigned integers.</document>
 </attributes>
 element UInt64 {
+
+	<attributes>
+	<size>8</size>
+	<ctype>uint64_t</ctype>
+	</attributes>
     struct { }
+
     public get UInt64 MaxValue = FromInteger(0xFFFFFFFFFFFFFFFF);
     public get UInt64 MinValue = FromInteger(0x0000000000000000);
 
@@ -1169,7 +1216,13 @@ Precision: floating, 23 significant bits
 <document>Provides a type and functions for 32-bit floating point numbers.</document>
 </attributes>
 element Float32 {
+
+	<attributes>
+	<size>4</size>
+	<ctype>float</ctype>
+	</attributes>
 	struct { }
+
 	public get Float32 MaxValue = FromBits(0x7F7FFFFF);
 	public get Float32 MinValue = FromBits(0xFF7FFFFF);
 	public get Float32 Epsilon  = FromBits(0x00000001);
@@ -1363,7 +1416,7 @@ element Float32 {
 	public get func ([object Integer]) => Float32 FromInteger;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
+	<javascriptvalue>((x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16))</javascriptvalue>
 	</attributes>
 	public get func ([object Numerator, object Denominator]) => Float32 FromFractional;
 
@@ -1383,7 +1436,13 @@ Precision: floating, 52 significant bits
 <document>Provides a type and functions for 64-bit floating point numbers.</document>
 </attributes>
 element Float64 {
+
+	<attributes>
+	<size>8</size>
+	<ctype>uint64_t</ctype>
+	</attributes>
 	struct { }
+
 	public get Float64 MaxValue = FromBits(0x7FEFFFFFFFFFFFFF);
 	public get Float64 MinValue = FromBits(0xFFEFFFFFFFFFFFFF);
 	public get Float64 Epsilon  = FromBits(0x0000000000000001);
@@ -1579,7 +1638,7 @@ element Float64 {
 	public get func ([object Integer]) => Float64 FromInteger;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16)</javascriptvalue>
+	<javascriptvalue>((x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16))</javascriptvalue>
 	</attributes>
 	public get func ([object Numerator, object Denominator]) => Float64 FromFractional;
 
