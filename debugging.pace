@@ -22,7 +22,7 @@ element Debug {
 	<javascriptdebugvalue>
 (x)=>{
 	if(window.cstack===undefined)console.log("[Debug.Log] "+x);
-	else console.log("[Debug.Log] ("+window.cstack[window.cstack.length-1]+") "+x);
+	else console.log("[Debug.Log] ("+(window.cstack[window.cstack.length-1]||"Unknown Location")+") "+x);
 }
 	</javascriptdebugvalue>
 	</attributes>
@@ -35,7 +35,7 @@ element Debug {
 	<javascriptdebugvalue>
 ()=>{
 	if(window.cstack===undefined)alert("[Debug.Pause] Application paused");
-	else alert("[Debug.Pause] ("+window.cstack[window.cstack.length-1]+") Application paused");
+	else alert("[Debug.Pause] ("+(window.cstack[window.cstack.length-1]||"Unknown Location")+") Application paused");
 }
 	</javascriptdebugvalue>
 	</attributes>
@@ -49,7 +49,7 @@ element Debug {
 (x)=>{
 	if(x)return;
 	if(window.cstack===undefined)alert("[Debug.Pause] Assert failed");
-	else alert("[Debug.Assert] ("+window.cstack[window.cstack.length-1]+") Assert failed");
+	else alert("[Debug.Assert] ("+(window.cstack[window.cstack.length-1]||"Unknown Location")+") Assert failed");
 	throw "assertfailed";
 }
 	</javascriptdebugvalue>
