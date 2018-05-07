@@ -1756,7 +1756,7 @@ convertion [object Numerator, object Denominator] : Float64 = Float64.FromFracti
 
 //configs
 
-config snum_convertions {
+config snumconvertions {
 	implicit convertion Int8 : Int16;
 	implicit convertion Int8 : Int32;
 	implicit convertion Int8 : Int64;
@@ -1782,7 +1782,7 @@ config snum_convertions {
 	implicit convertion [object Integer] : UInt64;
 }
 
-config snum_operators {
+config snumoperators {
 	operator Int8    == Int8    = Int8.Equals;
 	operator UInt8   == UInt8   = UInt8.Equals;
 	operator Int16   == Int16   = Int16.Equals;
@@ -1953,27 +1953,27 @@ config snum_operators {
 	operator 'asin'  Float64 = Float64.Asin;
 	operator 'acos'  Float64 = Float64.Acos;
 	operator 'atan'  Float64 = Float64.Atan;
-	operator Float64 'atan2' Float64 = Float64.Atan2;operator 'sinh'  Float64 = Float64.Sinh;
+	operator Float64 'atan2' Float64 = Float64.Atan2;
+	operator 'sinh'  Float64 = Float64.Sinh;
 	operator 'cosh'  Float64 = Float64.Cosh;
 	operator 'tanh'  Float64 = Float64.Tanh;
 }
 
-config snum_aliases {
+config snumaliases {
 	alias byte = UInt8;
 	alias int = Int32;
 	alias uint = UInt32;
 	alias float = Float64;
 }
 
-config snum_literals {
+config snumliterals {
 	automatic convertion [object Integer] : Int32;
 	automatic convertion [object Denominator, object Numerator] : Float64;
 }
 
-//snum_config uses all the other configs
-config snum_config {
-	use snum_convertions;
-	use snum_operators;
-	use snum_aliases;
-	use snum_literals;
+config smallnumbers {
+	use snumconvertions;
+	use snumoperators;
+	use snumaliases;
+	use snumliterals;
 }

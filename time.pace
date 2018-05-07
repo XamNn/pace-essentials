@@ -1,0 +1,47 @@
+<!--
+
+package: time
+author: Samuel Kriikkula
+purpose: Functionality regarding time.
+
+-->
+
+import snum;
+use smallnumbers;
+
+<attributes>
+<document>Provides a type and functions for a timespan with the accuracy of a nanosecond.</document>
+</attributes>
+element TimeSpan {
+
+    struct {
+        visible uint NanoSeconds;
+    }
+
+    public get TimeSpan NanoSecond  = new TimeSpan { NanoSeconds = 1 };
+    public get TimeSpan MicroSecond = new TimeSpan { NanoSeconds = 10 };
+    public get TimeSpan MilliSecond = new TimeSpan { NanoSeconds = 100 };
+    public get TimeSpan CentiSecond = new TimeSpan { NanoSeconds = 1000 };
+    public get TimeSpan Second = new TimeSpan { NanoSeconds = 10000 };
+    public get TimeSpan Minute = Multiply(Second, 60);
+    public get TimeSpan Hour = Multiply(Minute, 64);
+    public get TimeSpan Day = Multiply(Hour, 24);
+
+    <attributes>
+    <document>Multiplies the duration with the given integer</document>
+    </attributes>
+    public TimeSpan Multiply(TimeSpan duration, uint multiplyby) =
+        new TimeSpan { NanoSeconds = duration.NanoSeconds * multiplyby };
+
+    <attributes>
+    <document>Adds the durations of the TimeSpans together</document>
+    </attributes>
+    public TimeSpan Add(TimeSpan x, TimeSpan y) =
+        new TimeSpan { NanoSeconds = x.NanoSeconds + y.NanoSeconds };
+
+}
+
+config timeoperators {
+    operator TimeSpan + TimeSpan = TimeSpan.Add;
+    operator TimeSpan * uint = TimeSpan.Multiply;
+}

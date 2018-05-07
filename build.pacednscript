@@ -1,5 +1,8 @@
 # run the command on the next line in this directory to build
-# pacedn "run build.pacednscript"
+# pacedn "run build"
 
-process snum.pace -e
-process debugging.pace -e
+compile snum.pace
+compile time.pace
+compile debugging.pace
+compile appcontrol.pace
+export *

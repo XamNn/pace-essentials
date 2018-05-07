@@ -1,0 +1,28 @@
+<!--
+
+pacakge: appcontrol
+author: Samuel Kriikkula
+purpose: Functions for performing basic stuff regarding your application.
+
+-->
+
+import time;
+
+<attributes>
+<document>Provides basic functionality regarding the current application.</document>
+</attributes>
+element Application {
+
+    <attributes>
+    <document>Exits the application.</document>
+    <javascriptvalue>()=>{throw "Application.Exit"}</javascriptvalue>
+    </attributes>
+    public get func() Exit;
+
+    <attributes>
+    <document>Pauses the main thread of the application for the specified duration.</document>
+    <javascriptvalue>(x)=>{await new Promise(resolve => setTimeout(resolve,x))}</javascriptvalue>
+    </attributes>
+    public get func(TimeSpan) Sleep;
+
+}
