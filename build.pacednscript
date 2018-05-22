@@ -1,7 +1,9 @@
 # run the command on the next line in this directory to build
 # pacedn "run build"
 
+set debug false
 compile snum.pace
+compile array.pace
 compile time.pace
 compile debugging.pace
 compile appcontrol.pace

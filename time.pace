@@ -7,15 +7,27 @@ purpose: Functionality regarding time.
 -->
 
 import snum;
-use smallnumbers;
+
+use snum_operators;
+use snum_implicit_convertions;
 
 <attributes>
 <document>Provides a type and functions for a timespan with the accuracy of a nanosecond.</document>
 </attributes>
 element TimeSpan {
 
+    <attributes>
+    <immutable/>
+    </attributes>
     struct {
-        visible uint NanoSeconds;
+        visible    UInt64 NanoSeconds;
+        public get UInt64 MicroSeconds ==> NanoSeconds / 10;
+        public get UInt64 MilliSeconds ==> NanoSeconds / 100;
+        public get UInt64 CentiSeconds ==> NanoSeconds / 1000;
+        public get UInt64 Seconds      ==> NanoSeconds / 10000;
+        public get UInt64 Minutes      ==> Seconds / 60;
+        public get UInt64 Hours        ==> Minutes / 60;
+        public get UInt64 Days         ==> Hours / 24;
     }
 
     public get TimeSpan NanoSecond  = new TimeSpan { NanoSeconds = 1 };
@@ -27,21 +39,25 @@ element TimeSpan {
     public get TimeSpan Hour = Multiply(Minute, 64);
     public get TimeSpan Day = Multiply(Hour, 24);
 
-    <attributes>
-    <document>Multiplies the duration with the given integer</document>
-    </attributes>
-    public TimeSpan Multiply(TimeSpan duration, uint multiplyby) =
-        new TimeSpan { NanoSeconds = duration.NanoSeconds * multiplyby };
-
-    <attributes>
-    <document>Adds the durations of the TimeSpans together</document>
-    </attributes>
     public TimeSpan Add(TimeSpan x, TimeSpan y) =
         new TimeSpan { NanoSeconds = x.NanoSeconds + y.NanoSeconds };
 
+    public TimeSpan Subtract(TimeSpan x, TimeSpan y) = {
+        if y.NanoSeconds > x.NanoSeconds then
+            throw OutOfRange "Subtraction would result in a negative timespan.";
+        return new TimeSpan { NanoSeconds = x.NanoSeconds - y.NanoSeconds };
+    }
+
+    public TimeSpan Multiply(TimeSpan duration, UInt64 multiplyBy) =
+        new TimeSpan { NanoSeconds = duration.NanoSeconds * multiplyBy };
+
+    public TimeSpan Divide(TimeSpan duration, UInt64 divideBy) =
+        new TimeSpan { NanoSeconds = duration.NanoSeconds / divideBy };
 }
 
-config timeoperators {
+config time_operators {
     operator TimeSpan + TimeSpan = TimeSpan.Add;
-    operator TimeSpan * uint = TimeSpan.Multiply;
+    operator TimeSpan - TimeSpan = TimeSpan.Subtract;
+    operator TimeSpan * UInt64 = TimeSpan.Multiply;
+    operator TimeSpan / UInt64 = TimeSpan.Divide;
 }

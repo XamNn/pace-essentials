@@ -11,6 +11,13 @@ purpose: provide low-level numeric data types and arithmetic operations for them
 Range: -128 = -(2^7) to 127 = (2^8)-1
 Precision: fixed, 8 significant bits
 -->
+
+//aliases for number literal types
+alias integer = [object Integer];
+alias fractional = [object Denominator, object Numerator];
+alias negativeinteger = [integer Negative];
+alias negativefractional = [fractional Negative];
+
 <attributes>
 <document>Provides a type and functions for 8-bit signed integers.</document>
 </attributes>
@@ -51,17 +58,17 @@ element Int8 {
 	public get func (Int8, Int8) => bool MoreThanOrEquals;
 
 	<attributes>
-	<javascriptvalue>(x,y)=&gt;x+y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;(x+y)&amp;0xFF</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Add;
 
 	<attributes>
-	<javascriptvalue>(x,y)=&gt;x-y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;(x-y)&amp;0xFF</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Sub;
 
 	<attributes>
-	<javascriptvalue>(x,y)=&gt;x*y</javascriptvalue>
+	<javascriptvalue>(x,y)=&gt;(x*y)&amp;0xFF</javascriptvalue>
 	</attributes>
 	public get func (Int8, Int8) => Int8 Mul;
 
@@ -93,14 +100,19 @@ element Int8 {
 	public get func (Int8, Int8) => Int8 BitXor;
 
 	<attributes>
+	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
+	</attributes>
+	public get func (Int8) => Int8 BitNot;
+
+	<attributes>
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int8) => Int8 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
+	<javascriptvalue>(x)=>Math.Abs(x)</javascriptvalue>
 	</attributes>
-	public get func (Int8) => Int8 BitNot;
+	public get func (Int8) => UInt8 Abs;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -150,7 +162,12 @@ element Int8 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Int8 FromInteger;
+	public get func (integer) => Int8 FromInteger;
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-parseInt(x.member$Negative,16)</javascriptvalue>
+	</attributes>
+	public get func (negativeinteger) => Int8 FromNegativeInteger;
 }
 
 <!--
@@ -239,14 +256,15 @@ element UInt8 {
 	public get func (UInt8, UInt8) => UInt8 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
-	</attributes>
-	public get func (UInt8) => UInt8 Negate;
-
-	<attributes>
 	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt8) => UInt8 BitNot;
+
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
+	</attributes>
+	public get func (UInt8) => UInt8 Negate;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -296,7 +314,7 @@ element UInt8 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => UInt8 FromInteger;
+	public get func (integer) => UInt8 FromInteger;
 }
 
 <!--
@@ -386,14 +404,19 @@ element Int16 {
 	public get func (Int16, Int16) => Int16 BitXor;
 
 	<attributes>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
+	</attributes>
+	public get func (Int16) => Int16 BitNot;
+
+	<attributes>
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int16) => Int16 Negate;
 
 	<attributes>
-	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
+	<javascriptvalue>(x)=>Math.Abs(x)</javascriptvalue>
 	</attributes>
-	public get func (Int16) => Int16 BitNot;
+	public get func (Int16) => UInt16 Abs;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -443,7 +466,12 @@ element Int16 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Int16 FromInteger;
+	public get func (integer) => Int16 FromInteger;
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-parseInt(x.member$Negative,16)</javascriptvalue>
+	</attributes>
+	public get func (negativeinteger) => Int16 FromNegativeInteger;
 }
 
 <!--
@@ -528,6 +556,11 @@ element UInt16 {
 	public get func (UInt16, UInt16) => UInt16 BitOr;
 
 	<attributes>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
+	</attributes>
+	public get func (UInt16) => UInt16 BitNot;
+
+	<attributes>
 	<javascriptvalue>(x,y)=&gt;x^y</javascriptvalue>
 	</attributes>
 	public get func (UInt16, UInt16) => UInt16 BitXor;
@@ -536,11 +569,6 @@ element UInt16 {
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (UInt16) => UInt16 Negate;
-
-	<attributes>
-	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
-	</attributes>
-	public get func (UInt16) => UInt16 BitNot;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -590,7 +618,7 @@ element UInt16 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => UInt16 FromInteger;
+	public get func (integer) => UInt16 FromInteger;
 }
 
 <!--
@@ -680,14 +708,19 @@ element Int32 {
 	public get func (Int32, Int32) => Int32 BitXor;
 
 	<attributes>
+	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
+	</attributes>
+	public get func (Int32) => Int32 BitNot;
+
+	<attributes>
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int32) => Int32 Negate;
 
 	<attributes>
-	<javascriptvalue>(x,y)=&gt;~x</javascriptvalue>
+	<javascriptvalue>(x)=>Math.Abs(x)</javascriptvalue>
 	</attributes>
-	public get func (Int32) => Int32 BitNot;
+	public get func (Int32) => UInt32 Abs;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -737,7 +770,12 @@ element Int32 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Int32 FromInteger;
+	public get func (integer) => Int32 FromInteger;
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-parseInt(x.member$Negative,16)</javascriptvalue>
+	</attributes>
+	public get func (negativeinteger) => Int32 FromNegativeInteger;
 }
 
 <!--
@@ -827,14 +865,14 @@ element UInt32 {
 	public get func (UInt32, UInt32) => UInt32 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
-	</attributes>
-	public get func (UInt32) => UInt32 Negate;
-
-	<attributes>
 	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt32) => UInt32 BitNot;
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
+	</attributes>
+	public get func (UInt32) => UInt32 Negate;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -884,7 +922,7 @@ element UInt32 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => UInt32 FromInteger;
+	public get func (integer) => UInt32 FromInteger;
 }
 
 <!--
@@ -987,14 +1025,19 @@ element Int64 {
 	public get func (Int64, Int64) => Int64 BitXor;
 
 	<attributes>
+	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
+	</attributes>
+	public get func (Int64) => Int64 BitNot;
+
+	<attributes>
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Int64) => Int64 Negate;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
+	<javascriptvalue>(x)=Math.Abs(x)</javascriptvalue>
 	</attributes>
-	public get func (Int64) => Int64 BitNot;
+	public get func (Int64) => UInt64 Abs;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -1044,7 +1087,12 @@ element Int64 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Int64 FromInteger;
+	public get func (integer) => Int64 FromInteger;
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-parseInt(x.member$Negative,16)</javascriptvalue>
+	</attributes>
+	public get func (negativeinteger) => Int64 FromNegativeInteger;
 }
 
 <!--
@@ -1147,14 +1195,14 @@ element UInt64 {
 	public get func (UInt64, UInt64) => UInt64 BitXor;
 
 	<attributes>
-	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
-	</attributes>
-	public get func (UInt64) => UInt64 Negate;
-
-	<attributes>
 	<javascriptvalue>(x)=&gt;~x</javascriptvalue>
 	</attributes>
 	public get func (UInt64) => UInt64 BitNot;
+
+	<attributes>
+	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
+	</attributes>
+	public get func (UInt64) => UInt64 Negate;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;x</javascriptvalue>
@@ -1204,7 +1252,7 @@ element UInt64 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => UInt64 FromInteger;
+	public get func (integer) => UInt64 FromInteger;
 }
 
 <!--
@@ -1294,6 +1342,11 @@ element Float32 {
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Float32) => Float32 Negate;
+
+	<attributes>
+	<javascriptvalue>(x)=Math.Abs(x)</javascriptvalue>
+	</attributes>
+	public get func (Float32) => Float32 Abs;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;Math.exp(x)</javascriptvalue>
@@ -1413,18 +1466,28 @@ element Float32 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Float32 FromInteger;
+	public get func (integer) => Float32 FromInteger;
 
 	<attributes>
-	<javascriptvalue>((x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16))</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-parseInt(x.member$Negative,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Numerator, object Denominator]) => Float32 FromFractional;
+	public get func (negativeinteger) => Float32 FromNegativeInteger;
+
+	<attributes>
+	<javascriptvalue>((x)=&gt;parseInt(x.member$Denominator,16)/parseInt(x.member$Numerator,16))</javascriptvalue>
+	</attributes>
+	public get func (fractional) => Float32 FromFractional;
+
+	<attributes>
+	<javascriptvalue>((x)=&gt;-(parseInt(x.member$Negative.member$Denominator,16)/parseInt(x.member$Negative.member$Numerator),16))</javascriptvalue>
+	</attributes>
+	public get func (negativefractional) => Float32 FromNegativeFractional;
 
 	<attributes>
 	<javascriptrequire_i64/>
 	<javascriptvalue>(x)=&gt;(new Float32Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Float32 FromBits;
+	public get func (integer) => Float32 FromBits;
 }
 
 <!--
@@ -1514,6 +1577,11 @@ element Float64 {
 	<javascriptvalue>(x)=&gt;-x</javascriptvalue>
 	</attributes>
 	public get func (Float64) => Float64 Negate;
+
+	<attributes>
+	<javascriptvalue>(x)=Math.Abs(x)</javascriptvalue>
+	</attributes>
+	public get func (Float64) => Float64 Abs;
 
 	<attributes>
 	<javascriptvalue>(x)=&gt;Math.exp(x)</javascriptvalue>
@@ -1635,18 +1703,28 @@ element Float64 {
 	<attributes>
 	<javascriptvalue>(x)=&gt;parseInt(x,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Float64 FromInteger;
+	public get func (integer) => Float64 FromInteger;
 
 	<attributes>
-	<javascriptvalue>((x)=&gt;parseInt(x._member_Denominator,16)/parseInt(x._member_Numerator,16))</javascriptvalue>
+	<javascriptvalue>(x)=&gt;-parseInt(x.member$Negative,16)</javascriptvalue>
 	</attributes>
-	public get func ([object Numerator, object Denominator]) => Float64 FromFractional;
+	public get func (negativeinteger) => Float64 FromNegativeInteger;
+
+	<attributes>
+	<javascriptvalue>((x)=&gt;parseInt(x.member$Denominator,16)/parseInt(x.member$Numerator,16))</javascriptvalue>
+	</attributes>
+	public get func (fractional) => Float64 FromFractional;
+
+	<attributes>
+	<javascriptvalue>((x)=&gt;-(parseInt(x.member$Negative.member$Denominator,16)/parseInt(x.member$Negative.member$Numerator)),16))</javascriptvalue>
+	</attributes>
+	public get func (negativefractional) => Float64 FromNegativeFractional;
 
 	<attributes>
 	<pacedntjsrequire>i64</pacedntjsrequire>
 	<javascriptvalue>(x)=&gt;(new Uint64Array(i64_fromhexint(x).buffer))[0]</javascriptvalue>
 	</attributes>
-	public get func ([object Integer]) => Float64 FromBits;
+	public get func (integer) => Float64 FromBits;
 }
 
 //convertions
@@ -1741,22 +1819,30 @@ convertion Float64 : Int64   = Float64.ToInt64;
 convertion Float64 : UInt64  = Float64.ToUInt64;
 convertion Float64 : Float32 = Float64.ToFloat32;
 
-convertion [object Integer]                       : Int8    = Int8.FromInteger;
-convertion [object Integer]                       : UInt8   = UInt8.FromInteger;
-convertion [object Integer]                       : Int16   = Int16.FromInteger;
-convertion [object Integer]                       : UInt16  = UInt16.FromInteger;
-convertion [object Integer]                       : Int32   = Int32.FromInteger;
-convertion [object Integer]                       : UInt32  = UInt32.FromInteger;
-convertion [object Integer]                       : Int64   = Int64.FromInteger;
-convertion [object Integer]                       : UInt64  = UInt64.FromInteger;
-convertion [object Integer]                       : Float32 = Float32.FromInteger;
-convertion [object Integer]                       : Float64 = Float64.FromInteger;
-convertion [object Numerator, object Denominator] : Float32 = Float32.FromFractional;
-convertion [object Numerator, object Denominator] : Float64 = Float64.FromFractional;
+convertion integer : Int8    = Int8.FromInteger;
+convertion integer : UInt8   = UInt8.FromInteger;
+convertion integer : Int16   = Int16.FromInteger;
+convertion integer : UInt16  = UInt16.FromInteger;
+convertion integer : Int32   = Int32.FromInteger;
+convertion integer : UInt32  = UInt32.FromInteger;
+convertion integer : Int64   = Int64.FromInteger;
+convertion integer : UInt64  = UInt64.FromInteger;
+convertion integer : Float32 = Float32.FromInteger;
+convertion integer : Float64 = Float64.FromInteger;
+convertion negativeinteger : Int8  = Int8.FromNegativeInteger;
+convertion negativeinteger : Int16 = Int16.FromNegativeInteger;
+convertion negativeinteger : Int32 = Int32.FromNegativeInteger;
+convertion negativeinteger : Int64 = Int64.FromNegativeInteger;
+convertion negativeinteger : Float32 = Float32.FromNegativeInteger;
+convertion negativeinteger : Float64 = Float64.FromNegativeInteger;
+convertion fractional : Float32 = Float32.FromFractional;
+convertion fractional : Float64 = Float64.FromFractional;
+convertion negativefractional : Float32 = Float32.FromNegativeFractional;
+convertion negativefractional : Float64 = Float64.FromNegativeFractional;
 
 //configs
 
-config snumconvertions {
+config snum_implicit_convertions {
 	implicit convertion Int8 : Int16;
 	implicit convertion Int8 : Int32;
 	implicit convertion Int8 : Int64;
@@ -1771,18 +1857,39 @@ config snumconvertions {
 	implicit convertion UInt8 : UInt64;
 	implicit convertion UInt16 : Int32;
 	implicit convertion UInt16 : UInt32;
+	implicit convertion UInt16 : Int64;
+	implicit convertion UInt16 : UInt64;
+	implicit convertion UInt32 : Int64;
+	implicit convertion UInt32 : UInt64;
 
-	implicit convertion [object Integer] : Int8;
-	implicit convertion [object Integer] : UInt8;
-	implicit convertion [object Integer] : Int16;
-	implicit convertion [object Integer] : UInt16;
-	implicit convertion [object Integer] : Int32;
-	implicit convertion [object Integer] : UInt32;
-	implicit convertion [object Integer] : Int64;
-	implicit convertion [object Integer] : UInt64;
+	implicit convertion integer : Int8;
+	implicit convertion integer : UInt8;
+	implicit convertion integer : Int16;
+	implicit convertion integer : UInt16;
+	implicit convertion integer : Int32;
+	implicit convertion integer : UInt32;
+	implicit convertion integer : Int64;
+	implicit convertion integer : UInt64;
+	implicit convertion integer : Float32;
+	implicit convertion integer : Float64;
+	implicit convertion negativeinteger : Int8;
+	implicit convertion negativeinteger : Int16;
+	implicit convertion negativeinteger : Int32;
+	implicit convertion negativeinteger : Int64;
+	implicit convertion negativeinteger : Float32;
+	implicit convertion negativeinteger : Float64;
+	implicit convertion fractional : Float32;
+	implicit convertion fractional : Float64;
+	implicit convertion negativefractional : Float32;
+	implicit convertion negativefractional : Float64;
 }
 
-config snumoperators {
+config snum_operators {
+
+	//these so that negative number literals work without automatic convertions
+	operator - integer = func(integer x) = [Negative = x];
+	operator - fractional = func(fractional x) = [Negative = x];
+
 	operator Int8    == Int8    = Int8.Equals;
 	operator UInt8   == UInt8   = UInt8.Equals;
 	operator Int16   == Int16   = Int16.Equals;
@@ -1931,6 +2038,12 @@ config snumoperators {
 	operator - Int64   = Int64.Negate;
 	operator - Float32 = Float32.Negate;
 	operator - Float64 = Float64.Negate;
+	operator 'abs' Int8    = Int8.Abs;
+	operator 'abs' Int16   = Int16.Abs;
+	operator 'abs' Int32   = Int32.Abs;
+	operator 'abs' Int64   = Int64.Abs;
+	operator 'abs' Float32 = Float32.Abs;
+	operator 'abs' Float64 = Float64.Abs;
 	operator 'isnan' Float32 = Float32.IsNaN;
 	operator 'exp'   Float32 = Float32.Exp;
 	operator 'log'   Float32 = Float32.Log;
@@ -1959,21 +2072,11 @@ config snumoperators {
 	operator 'tanh'  Float64 = Float64.Tanh;
 }
 
-config snumaliases {
-	alias byte = UInt8;
-	alias int = Int32;
-	alias uint = UInt32;
-	alias float = Float64;
+config Int64_literals {
+	automatic convertion integer : Int64;
+	automatic convertion negativeinteger : Int64;
 }
-
-config snumliterals {
-	automatic convertion [object Integer] : Int32;
-	automatic convertion [object Denominator, object Numerator] : Float64;
-}
-
-config smallnumbers {
-	use snumconvertions;
-	use snumoperators;
-	use snumaliases;
-	use snumliterals;
+config Float64_literals {
+	automatic convertion fractional : Float64;
+	automatic convertion negativefractional : Float64;
 }
