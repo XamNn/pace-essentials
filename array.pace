@@ -1,7 +1,7 @@
 import snum;
 
-use snum_operators;
-use snum_implicit_convertions;
+use snumops;
+use snumimplicits;
 
 <attributes>
 <document>A genericly typed fixed size collection of items.</document>
@@ -19,7 +19,7 @@ element Array {
         visible bool IsReadonly = false;
 
         //the actual array
-        visible PrimitiveArray<T> UnderlyingArray;
+        visible PrimitiveArray<T> UnderlyingArray = AllocatePrimitiveArray<T>(0);
 
         public get UInt32 Length ==> PrimitiveArrayLength(UnderlyingArray);
 
@@ -53,8 +53,13 @@ element Array {
         new Array<T> { UnderlyingArray = AllocatePrimitiveArray<T>(length) };
 
     //shallow clone an array, optionally from and to specified indicies
-    public Array<T> Clone<T>(Array<T> source, Int64 from = 0, Int64 to = -1) =
-        new Array<T> { UnderlyingArray = PrimitiveArrayCopy(source.UnderlyingArray, source.GetActualIndex(from), source.GetActualIndex(to)) };
+    public Array<T> Clone<T>(Array<T> source, UInt32 from = 0, UInt32 to = source.Length) = {
+        if from >= source.Length or to > source.Length then
+            throw OutOfRange "Starting or ending position out of range.";
+        return new Array<T> { UnderlyingArray = PrimitiveArrayCopy(source.UnderlyingArray, from, to) };
+    }
+
+    public Array<T> Empty<T>() = new Array<T>;
 
     //compares the array elements with the specified function
     public bool Compare<TFirst, TSecond>(Array<TFirst> first, Array<TSecond> second, func(TFirst, TSecond) => bool predicate) = {
@@ -69,7 +74,7 @@ element Array {
             if not predicate(first[i], second[i]) then return false;
 
             i = i + 1;
-            if i > first.Length then continue;
+            if i < first.Length then continue;
         }
 
         //if all calls to predicate are true then return true

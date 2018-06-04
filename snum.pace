@@ -1842,7 +1842,7 @@ convertion negativefractional : Float64 = Float64.FromNegativeFractional;
 
 //configs
 
-config snum_implicit_convertions {
+config snumimplicits {
 	implicit convertion Int8 : Int16;
 	implicit convertion Int8 : Int32;
 	implicit convertion Int8 : Int64;
@@ -1884,7 +1884,7 @@ config snum_implicit_convertions {
 	implicit convertion negativefractional : Float64;
 }
 
-config snum_operators {
+config snumops {
 
 	//these so that negative number literals work without automatic convertions
 	operator - integer = func(integer x) = [Negative = x];

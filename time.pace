@@ -8,8 +8,8 @@ purpose: Functionality regarding time.
 
 import snum;
 
-use snum_operators;
-use snum_implicit_convertions;
+use snumops;
+use snumimplicits;
 
 <attributes>
 <document>Provides a type and functions for a timespan with the accuracy of a nanosecond.</document>
