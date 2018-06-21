@@ -1,3 +1,4 @@
+
 <!--
 
 pacakge: appcontrol
@@ -6,7 +7,8 @@ purpose: Functions for performing basic stuff regarding your application.
 
 -->
 
-import time;
+[package appcontrol]
+[depends time]
 
 <attributes>
 <document>Provides basic functionality regarding the current application.</document>
@@ -21,8 +23,12 @@ element Application {
 
     <attributes>
     <document>Pauses the main thread of the application for the specified duration.</document>
-    <javascriptvalue>(x)=>{await new Promise(resolve => setTimeout(resolve,x))}</javascriptvalue>
     </attributes>
-    public get func(TimeSpan) Sleep;
+    public get Sleep(TimeSpan x) => SleepMs(x.MilliSeconds);
+
+    <attributes>
+    <javascriptvalue>(x)=>{var b=true;setTimeout(()=>b=false,x);while(b);}</javascriptvalue>
+    </attributes>
+    get func(UInt64) SleepMs;
 
 }

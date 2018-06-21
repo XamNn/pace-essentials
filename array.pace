@@ -1,68 +1,82 @@
-import snum;
+<!--
+
+package: array
+author: Samuel Kriikkula
+purpose: Genericly typed fixed size collection
+
+-->
+
+[package array]
+[depends snum]
 
 use snumops;
 use snumimplicits;
 
 <attributes>
-<document>A genericly typed fixed size collection of items.</document>
+<document>A genericly typed fixed size collection.</document>
 </attributes>
-element Array {
+element Array
+{
 
     //struct because while arrays are by reference,
     //an Array object stores a flag of it being read-only along with the actual array
     <attributes>
     <immutable/>
     </attributes>
-    struct <T> {
+    struct <T>
+    {
 
         //true if assigning to array elements is not permitted
         visible bool IsReadonly = false;
 
-        //the actual array
-        visible PrimitiveArray<T> UnderlyingArray = AllocatePrimitiveArray<T>(0);
+        PrimitiveArray<T> UnderlyingArray = AllocatePrimitiveArray<T>(0);
 
-        public get UInt32 Length ==> PrimitiveArrayLength(UnderlyingArray);
+        public get UInt32 Length => PrimitiveArrayLength(UnderlyingArray);
 
         //this array as readonly
-        public get Array<T> AsReadonly ==>
+        public get Array<T> AsReadonly =>
             new Array<T> { IsReadonly = true, UnderlyingArray = UnderlyingArray };
 
         //element get/set methods
-        public T Indexer_get(Int64 index) = PrimitiveArrayGetElement(UnderlyingArray, GetActualIndex(index));
-        public Indexer_set(Int64 index, T value) = { PrimitiveArraySetElement(UnderlyingArray, GetActualIndex(index), value); };
-
-        //converts negative indicies into positive ones
-        //and throws if out of range
-        public UInt32 GetActualIndex(Int64 index) = {
-            if index < 0 then {
-                index = Length:Int64 + index;
-                if index < 0 then ThrowOutOfRange();
-            }
-            if index >= Length then ThrowOutOfRange();
-            return index:UInt32;
-        }
+        public T Indexer_get(Int64 index) => PrimitiveArrayGetElement(UnderlyingArray, ConvertIndex(index, Length));
+        public Indexer_set(Int64 index, T value) => { PrimitiveArraySetElement(UnderlyingArray, ConvertIndex(index, Length), value); };
 
     }
 
-    ThrowOutOfRange() = {
+    //converts negative indicies into positive ones
+    //and throws if out of range
+    UInt32 ConvertIndex(Int64 index, UInt32 length) =>
+    {
+        if index < 0 then {
+            index = length + index:UInt32;
+            if index < 0 then ThrowOutOfRange();
+        }
+        if index >= length then ThrowOutOfRange();
+        return index:UInt32;
+    }
+
+    ThrowOutOfRange() =>
+    {
         throw OutOfRange "Index was out of range.";
     }
 
     //allocates an array of the specified length
-    public Array<T> Allocate<T>(UInt32 length) =
+    public Array<T> Allocate<T>(UInt32 length) =>
         new Array<T> { UnderlyingArray = AllocatePrimitiveArray<T>(length) };
 
     //shallow clone an array, optionally from and to specified indicies
-    public Array<T> Clone<T>(Array<T> source, UInt32 from = 0, UInt32 to = source.Length) = {
+    public Array<T> Clone<T>(Array<T> source, UInt32 from = 0, UInt32 to = source.Length) =>
+    {
         if from >= source.Length or to > source.Length then
             throw OutOfRange "Starting or ending position out of range.";
         return new Array<T> { UnderlyingArray = PrimitiveArrayCopy(source.UnderlyingArray, from, to) };
     }
 
-    public Array<T> Empty<T>() = new Array<T>;
+    public Array<T> Empty<T>() => new Array<T>;
 
     //compares the array elements with the specified function
-    public bool Compare<TFirst, TSecond>(Array<TFirst> first, Array<TSecond> second, func(TFirst, TSecond) => bool predicate) = {
+    public bool Compare<TFirst, TSecond>(Array<TFirst> first, Array<TSecond> second, func(TFirst, TSecond) -> bool predicate) =>
+    {
 
         //must be same length
         if not first.Length == second.Length then return false;
@@ -87,26 +101,26 @@ element Array {
     <attributes>
     <javascriptvalue>(x)=>new Array(x)</javascriptvalue>
     </attributes>
-    public func<T>(UInt32) => PrimitiveArray<T> AllocatePrimitiveArray;
+    func<T>(UInt32) -> PrimitiveArray<T> AllocatePrimitiveArray;
 
     <attributes>
     <javascriptvalue>(x)=>x.length</javascriptvalue>
     </attributes>
-    public func<T>(PrimitiveArray<T>) => UInt32 PrimitiveArrayLength;
+    func<T>(PrimitiveArray<T>) -> UInt32 PrimitiveArrayLength;
 
     <attributes>
     <javascriptvalue>(x,y)=>x[y]</javascriptvalue>
     </attributes>
-    public func<T>(PrimitiveArray<T>, UInt32) => T PrimitiveArrayGetElement;
+    func<T>(PrimitiveArray<T>, UInt32) -> T PrimitiveArrayGetElement;
 
     <attributes>
     <javascriptvalue>(x,y,z)=>{x[y]=z;}</javascriptvalue>
     </attributes>
-    public func<T>(PrimitiveArray<T>, UInt32, T) PrimitiveArraySetElement;
+    func<T>(PrimitiveArray<T>, UInt32, T) PrimitiveArraySetElement;
 
     <attributes>
     <javascriptvalue>(x,y,z)=>x.slice(y,z)</javascriptvalue>
     </attributes>
-    public func<T>(PrimitiveArray<T>, UInt32, UInt32) => PrimitiveArray<T> PrimitiveArrayCopy;
+    func<T>(PrimitiveArray<T>, UInt32, UInt32) -> PrimitiveArray<T> PrimitiveArrayCopy;
 
 }

@@ -6,7 +6,7 @@ purpose: Functionality regarding time.
 
 -->
 
-import snum;
+[depends snum]
 
 use snumops;
 use snumimplicits;
@@ -20,38 +20,38 @@ element TimeSpan {
     <immutable/>
     </attributes>
     struct {
-        visible    UInt64 NanoSeconds;
-        public get UInt64 MicroSeconds ==> NanoSeconds / 10;
-        public get UInt64 MilliSeconds ==> NanoSeconds / 100;
-        public get UInt64 CentiSeconds ==> NanoSeconds / 1000;
-        public get UInt64 Seconds      ==> NanoSeconds / 10000;
-        public get UInt64 Minutes      ==> Seconds / 60;
-        public get UInt64 Hours        ==> Minutes / 60;
-        public get UInt64 Days         ==> Hours / 24;
+        visible    UInt64 NanoSeconds = 1;
+        public get UInt64 MicroSeconds => NanoSeconds / 10;
+        public get UInt64 MilliSeconds => NanoSeconds / 100;
+        public get UInt64 CentiSeconds => NanoSeconds / 1000;
+        public get UInt64 Seconds      => NanoSeconds / 10000;
+        public get UInt64 Minutes      => Seconds / 60;
+        public get UInt64 Hours        => Minutes / 60;
+        public get UInt64 Days         => Hours / 24;
     }
 
-    public get TimeSpan NanoSecond  = new TimeSpan { NanoSeconds = 1 };
-    public get TimeSpan MicroSecond = new TimeSpan { NanoSeconds = 10 };
-    public get TimeSpan MilliSecond = new TimeSpan { NanoSeconds = 100 };
-    public get TimeSpan CentiSecond = new TimeSpan { NanoSeconds = 1000 };
-    public get TimeSpan Second = new TimeSpan { NanoSeconds = 10000 };
-    public get TimeSpan Minute = Multiply(Second, 60);
-    public get TimeSpan Hour = Multiply(Minute, 64);
-    public get TimeSpan Day = Multiply(Hour, 24);
+    public get TimeSpan NanoSecond  => new TimeSpan { NanoSeconds = 1 };
+    public get TimeSpan MicroSecond => new TimeSpan { NanoSeconds = 10 };
+    public get TimeSpan MilliSecond => new TimeSpan { NanoSeconds = 100 };
+    public get TimeSpan CentiSecond => new TimeSpan { NanoSeconds = 1000 };
+    public get TimeSpan Second => new TimeSpan { NanoSeconds = 10000 };
+    public get TimeSpan Minute => Multiply(Second, 60);
+    public get TimeSpan Hour => Multiply(Minute, 64);
+    public get TimeSpan Day => Multiply(Hour, 24);
 
-    public TimeSpan Add(TimeSpan x, TimeSpan y) =
+    public TimeSpan Add(TimeSpan x, TimeSpan y) =>
         new TimeSpan { NanoSeconds = x.NanoSeconds + y.NanoSeconds };
 
-    public TimeSpan Subtract(TimeSpan x, TimeSpan y) = {
+    public TimeSpan Subtract(TimeSpan x, TimeSpan y) => {
         if y.NanoSeconds > x.NanoSeconds then
             throw OutOfRange "Subtraction would result in a negative timespan.";
         return new TimeSpan { NanoSeconds = x.NanoSeconds - y.NanoSeconds };
     }
 
-    public TimeSpan Multiply(TimeSpan duration, UInt64 multiplyBy) =
+    public TimeSpan Multiply(TimeSpan duration, UInt64 multiplyBy) =>
         new TimeSpan { NanoSeconds = duration.NanoSeconds * multiplyBy };
 
-    public TimeSpan Divide(TimeSpan duration, UInt64 divideBy) =
+    public TimeSpan Divide(TimeSpan duration, UInt64 divideBy) =>
         new TimeSpan { NanoSeconds = duration.NanoSeconds / divideBy };
 }
 

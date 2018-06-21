@@ -1,0 +1,44 @@
+<!--
+
+package: string
+author: Samuel Kriikkula
+purpose: platform-specific immutable string type
+
+-->
+
+[package string]
+[depends snum]
+
+alias char = UInt32;
+
+element String {
+
+    struct {
+        private PrimitiveString ActualString;
+
+        public UInt32 Length => PrimitiveStringLength(ActualString);
+        public char Indexer_get(Int64 index) = PrimitiveStringGetCharacter(ActualString, ConvertIndex(index, Length));
+        public Indexer_set(Int64 index, char character) = PrimitiveStringSetCharacter(ActualString, ConvertIndex(index, Length), character);
+    }
+
+    //converts negative indicies into positive ones
+    //and throws if out of range
+    UInt32 ConvertIndex(Int64 index, UInt32 length) => {
+        if index < 0 then {
+            index = Length:UInt32 + index;
+            if index < 0 then ThrowOutOfRange();
+        }
+        if index >= Length then ThrowOutOfRange();
+        return index:UInt32;
+    }
+
+    ThrowOutOfRange() => {
+        throw OutOfRange "Index was out of range.";
+    }
+
+    struct PrimitiveString { }
+
+    func (PrimitiveString) UInt32 PrimitiveStringLength;
+    func (PrimitiveString, UInt32) char PrimitiveStringGetCharacter;
+    func (PrimitiveString, UInt32, char) PrimitiveStringSetCharacter;
+}

@@ -6,6 +6,8 @@ purpose: platform-specific debugging functionality
 
 -->
 
+[package debugging]
+
 <attributes>
 <document>Provides functions for debugging your application.</document>
 </attributes>
