@@ -1,12 +1,3 @@
-
-<!--
-
-pacakge: appcontrol
-author: Samuel Kriikkula
-purpose: Functions for performing basic stuff regarding your application.
-
--->
-
 [package appcontrol]
 [depends time]
 

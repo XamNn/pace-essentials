@@ -1,11 +1,3 @@
-<!--
-
-package: time
-author: Samuel Kriikkula
-purpose: Functionality regarding time.
-
--->
-
 [depends snum]
 
 use snumops;

@@ -1,11 +1,3 @@
-<!--
-
-package: array
-author: Samuel Kriikkula
-purpose: Genericly typed fixed size collection
-
--->
-
 [package array]
 [depends snum]
 

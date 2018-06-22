@@ -1,11 +1,3 @@
-<!--
-
-package: string
-author: Samuel Kriikkula
-purpose: platform-specific immutable string type
-
--->
-
 [package string]
 [depends snum]
 

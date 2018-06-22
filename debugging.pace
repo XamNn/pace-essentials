@@ -1,11 +1,3 @@
-<!--
-
-package: debugging
-author: Samuel Kriikkula
-purpose: platform-specific debugging functionality
-
--->
-
 [package debugging]
 
 <attributes>
