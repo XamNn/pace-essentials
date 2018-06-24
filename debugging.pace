@@ -20,7 +20,7 @@ element Debug {
 }
 	</javascriptdebugvalue>
 	</attributes>
-	public get func(object) Log;
+	public get func(object?) Log;
 
 	//pauses the application
 	<attributes>

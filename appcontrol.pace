@@ -1,5 +1,9 @@
 [package appcontrol]
+[depends snum]
 [depends time]
+
+use snumops;
+use snumimplicits;
 
 <attributes>
 <document>Provides basic functionality regarding the current application.</document>
@@ -15,11 +19,34 @@ element Application {
     <attributes>
     <document>Pauses the main thread of the application for the specified duration.</document>
     </attributes>
-    public get Sleep(TimeSpan x) => SleepMs(x.MilliSeconds);
+    public Sleep(TimeSpan x) => SleepMs(x.MilliSeconds);
 
     <attributes>
     <javascriptvalue>(x)=>{var b=true;setTimeout(()=>b=false,x);while(b);}</javascriptvalue>
     </attributes>
     get func(UInt64) SleepMs;
+
+    <attributes>
+    <javascriptvalue>(x)=>{console.log(String.fromCodePoint(x));}</javascriptvalue>
+    </attributes>
+    public get func(UInt32) Write;
+
+    public UInt32? Read() => {
+        value = ReadInt();
+        return
+            when value == -1 then null
+            else value:UInt32;
+    }
+
+    <attributes>
+    <javascriptvalue>
+()=>{
+    if(window["stdinbfr"]===undefined)window["stdinbfr"]=[];
+    if(stdinbfr.length===0)return -1;
+    return stdinbfr.shift();
+}
+    </javascriptvalue>
+    </attributes>
+    get func() -> Int64 ReadInt;
 
 }
