@@ -27,12 +27,45 @@ element Application {
     get func(UInt64) SleepMs;
 
     <attributes>
+    <document>Write a single byte to the standard output</document>
     <javascriptvalue>(x)=>{console.log(String.fromCodePoint(x));}</javascriptvalue>
     </attributes>
-    public get func(UInt32) Write;
+    public get func(UInt8) WriteByte;
 
-    public UInt32? Read() => {
-        value = ReadInt();
+    <attributes>
+    <document>Write a unicode character to the standard output</document>
+    <javascriptvalue>(x)=>{console.log(String.fromCodePoint(x));}</javascriptvalue>
+    </attributes>
+    public get func(UInt32) WriteChar;
+
+    public UInt8? ReadByte() => {
+        value = _ReadByte();
+        return
+            when value == -1 then null
+            else value:UInt8;
+    }
+
+    <attributes>
+    <javascriptvalue>
+((window["stdinbfr"]=[]),
+(window["stdin"]=(x)=>{
+    var l=x.length;
+    for(var i=0;i&lt;l;i++)
+        stdinbfr.push(x.charCodeAt(i));
+}),
+()=>{
+    if(stdinbfr.length===0)return -1;
+    return stdinbfr.shift();
+})
+    </javascriptvalue>
+    </attributes>
+    get func() -> Int16 _ReadByte;
+
+    <attributes>
+    <document>Reads a unicode character from the sandard input</document>
+    </attributes>
+    public UInt32? ReadChar() => {
+        value = _ReadChar();
         return
             when value == -1 then null
             else value:UInt32;
@@ -40,13 +73,23 @@ element Application {
 
     <attributes>
     <javascriptvalue>
+((window["stdinbfr"]=[]),
+(window["stdin"]=(x)=>{
+    var l=x.length;
+    for(var i=0;i&lt;l;i++)
+        stdinbfr.push(x.charCodeAt(i));
+}),
 ()=>{
-    if(window["stdinbfr"]===undefined)window["stdinbfr"]=[];
     if(stdinbfr.length===0)return -1;
     return stdinbfr.shift();
-}
+})
     </javascriptvalue>
     </attributes>
-    get func() -> Int64 ReadInt;
+    get func() -> Int64 _ReadChar;
+
+    <attributes>
+    <javascriptvalue></javascriptvalue>
+    </attributes>
+    public get func() CommandLineFormat;
 
 }

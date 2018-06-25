@@ -28,8 +28,8 @@ element Debug {
 	<javascriptvalue>(x)=>{}</javascriptvalue>
 	<javascriptdebugvalue>
 ()=>{
-	if(window.cstack===undefined)alert("[Debug.Pause] Application paused");
-	else alert("[Debug.Pause] ("+(window.cstack[window.cstack.length-1]||"Unknown Location")+") Application paused");
+	if(window.cstack===undefined)eval(prompt("[Debug.Pause] Application paused, the specified code will be executed"));
+	else eval(prompt("[Debug.Pause] ("+(window.cstack[window.cstack.length-1]||"Unknown Location")+") Application paused, the specified code will be executed"));
 }
 	</javascriptdebugvalue>
 	</attributes>
