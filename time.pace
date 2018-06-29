@@ -1,7 +1,7 @@
 [depends snum]
 
-use snumops;
-use snumimplicits;
+use snum::ops;
+use snum::implicits;
 
 <attributes>
 <document>Provides a type and functions for a timespan with the accuracy of a nanosecond.</document>

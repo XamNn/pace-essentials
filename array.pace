@@ -1,8 +1,8 @@
 [package array]
 [depends snum]
 
-use snumops;
-use snumimplicits;
+use snum::ops;
+use snum::implicits;
 
 <attributes>
 <document>A genericly typed fixed size collection.</document>

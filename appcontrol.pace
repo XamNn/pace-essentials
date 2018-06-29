@@ -2,8 +2,8 @@
 [depends snum]
 [depends time]
 
-use snumops;
-use snumimplicits;
+use snum::ops;
+use snum::implicits;
 
 <attributes>
 <document>Provides basic functionality regarding the current application.</document>
@@ -39,7 +39,7 @@ element Application {
     public get func(UInt32) WriteChar;
 
     public UInt8? ReadByte() => {
-        value = _ReadByte();
+        value = PrivateReadByte();
         return
             when value == -1 then null
             else value:UInt8;
@@ -59,13 +59,13 @@ element Application {
 })
     </javascriptvalue>
     </attributes>
-    get func() -> Int16 _ReadByte;
+    get func() -> Int16 PrivateReadByte;
 
     <attributes>
     <document>Reads a unicode character from the sandard input</document>
     </attributes>
     public UInt32? ReadChar() => {
-        value = _ReadChar();
+        value = PrivateReadChar();
         return
             when value == -1 then null
             else value:UInt32;
@@ -85,7 +85,7 @@ element Application {
 })
     </javascriptvalue>
     </attributes>
-    get func() -> Int64 _ReadChar;
+    get func() -> Int64 PrivateReadChar;
 
     <attributes>
     <javascriptvalue></javascriptvalue>
